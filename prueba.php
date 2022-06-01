@@ -46,55 +46,46 @@
             </div>
         </div>
 
-        <div class="depto">
-            <div class="dep-1">
-                <img src="imagenes/alquiler.jpg" alt="">
-            </div>
-            <div class="dep-2">
-                <div class="dep-22">
-                    <p>Departamento sector Universidad del Bío-Bío</p>
-                    <h2>Terrazas Collao 456</h2>
-                    <p>1 y 2 dormitorios, en los mejores sectores de concepción.
-                        Invierte hoy en tu futuro.
-                        Los mejores valores en UF y rentabilidad para tu inversión inmobiliaria.
-                    </p>
-                </div>
-                <div class="dep-23">
-
-                    <p>$400.000 CLP</p>
-                    <hr style="color: rgb(127, 77, 16);">
-                    <div class="contenedor-rate">
-                        <div class="accesorios">
-                                <!-- Imagenes de caracts de depto/propiedad -->
-                            <figure>
-                                <img src="imagenes/dormitorio.png" alt="Trulli">
-                                <figcaption>2 dorm</figcaption>
-                            </figure>
-
-                            <figure>
-                                <img src="imagenes/banera.png" alt="Trulli">
-                                <figcaption>1 baño</figcaption>
-                            </figure>
-
-                            <figure>
-                                <img src="imagenes/wifi.png" alt="Trulli">
-                                <figcaption>Wifi</figcaption>
-                            </figure>
+        <main class="contenedor-principal">
+            <section class="contenedor-filtros">
+                ...
+            </section>
+            <section class="contenedor-arriendos">
+                <div class="contenedor-arriendo">
+                    <div class="imagen-arriendo">
+                        <img src="imagenes/depto.png" alt="">
+                    </div>
+                    <div class="contenido-arriendo">
+                        <div class="contenido-principal">
+                            <div class="universidad-calificacion">
+                                <p>Lorem ipsum dolor sit.</p>
+                                <div class="calificacion">
+                                    <img src="imagenes/estrella.png" alt="">
+                                    <p><strong>4.6</strong></p>
+                                </div>
+                            </div>
+                            <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+                            <p class="descripcion-arriendo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo mollitia doloremque laborum natus reiciendis obcaecati!</p>
                         </div>
-                        <div class="puntuacion">
-                            <img src="imagenes/estrella.png" alt="">
-                            <p>4.7</p>
+                        <hr>
+                        <div class="contenido-secundario">
+                            <p class="precio-arriendo">$300.000 CLP</p>
+                            <div class="caracteristicas-arriendo">
+                                <div class="caracteristica-arriendo">
+                                    <img src="imagenes/wifi.png" alt="">
+                                    <p>1 dorm</p>
+                                </div>
+                                <div class="caracteristica-arriendo">
+                                    <img src="imagenes/wifi.png" alt="">
+                                    <p>1 dorm</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-
+            </section>
+        </main>
     </div>
-
-
-
 
 </body>
 </html>

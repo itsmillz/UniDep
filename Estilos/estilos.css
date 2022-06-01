@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
 body {
     margin: 0px;
     padding: 0px;
@@ -6,6 +7,8 @@ body {
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* body:before {
@@ -261,155 +264,112 @@ input:-moz-placeholder {
     text-align: center;
 }
 
-/* .depto { */
-/*background-color: #fafafa;
-    margin: 20px;
-    padding: 63px;*/
-/* border: 2px solid #ccc; 
-    border-radius: 25px;
-    /* IMPORTANTE 
-    text-align: center;
-    margin-left: 235px;
-    margin-right: 235px;
-    position: relative;
-    top: -20px;*/
-/* } */
-
-.depto {
-
-    padding: 10px;
-    border-radius: 20px;
+/* CONTENIDO PRINCIPAL DE BODY */
+.contenedor-principal{
+    display: flex;
+    width: 100%;
+    padding: 20px 100px;
+}
+/* Estilos de los filtros laterales */
+.contenedor-filtros{
+    width: 400px;
     background-color: #fff;
+}
+
+/* Estilos de los seccion principal (main) */
+.contenedor-arriendos{
+    width: 100%;
+    padding: 0 80px;
+}
+/* Estilos de los arriendos individuales */
+.contenedor-arriendo{
     display: flex;
-    width: 900px;
-    margin: 0 auto;
-    top: 55px;
-    box-shadow: 5px 10px 18px #888888;
-    position: relative;
-
+    background-color: #fff;
+    border-radius: 15px;
 }
-
-.dep-1 {
-    width: 90%;
-    margin-right: 15px;
+/* Estilos de la imagen principal */
+.imagen-arriendo{
+    width: 700px;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
 }
-.dep-1 img{
+.imagen-arriendo img{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+    height: 100%;
+    background-size:cover;
+    background-position: center center;
 }
-
-.dep-2 {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    width: 50%;
+/* Estilos de la información principal */
+.contenido-arriendo{
+    width: 100%;
+    position: relative;
 }
-
-.dep-22 {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-
-}
-
-.dep-22 p,
-h2 {
-    margin: 0;
-    padding: 2px;
-    
-}
-
-.dep-23 {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+.contenido-principal{
     width: 100%;
 }
-
-.depto img {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-    object-fit: contain;
-    border-radius: 25px
-        /*display: inline-flex;
-    border-radius: 25px;
-    margin-right: 600px;
-    margin-left: 9px;
-    position: relative;
-    top: 21px;
-    height: 157px; */
+.contenido-principal h2{
+    margin: 8px 0;
+    padding-left: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
 }
-
-.ubicacion {
-    font-size: 15px;
-    color: #888;
-    margin-left: 350px;
-    margin-right: -5px;
-    position: relative;
-    top: -142px;
+.descripcion-arriendo{
+    margin-bottom: 60px;
+    padding-left: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
-
-.direccion {
-
-    font-size: 27px;
-    color: #050505;
-    margin-left: 300px;
-    margin-right: -54px;
-    position: relative;
-    top: -149px;
-
-}
-
-.descripcion {
-    font-size: 7px;
-    color: #888;
-    margin-left: 350px;
-    margin-right: -5px;
-    position: relative;
-    top: -150px;
-    
-
-}
-
-.depto p {
-    color: #030303;
-    text-indent: 0;
-}
-
-.depto h2 {
-    color: #030303;
-    text-indent: 0;
-}
-
-.contenedor-rate {
+/* Estilos de las universidades cercanas y la calificacion */
+.universidad-calificacion{
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 10px;
+    margin: 8px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.calificacion{
+    display: flex;
+    align-items: center;
+}
+.calificacion img{
+    width: 20px;
+    height: 20px;
 }
 
-.accesorios {
-    display: flex;
+/* Estilos de los contenidos secundarios */
+.contenido-secundario{
     width: 100%;
-    justify-content: flex-start;
-}
-.accesorios figure{
-    margin: 0 10px 0 0;
-}
-.accesorios figure img{
-    width: 25px;
-}
-
-.puntuacion {
     display: flex;
-    justify-content: space-around;
-    width: 15%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding-right: 10px;
+    padding-left: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
-
-.puntuacion img{
-
-    width: 25px;
-    margin-right: 5px;
+.caracteristicas-arriendo{
+    display: flex;
 }
-
+.caracteristica-arriendo img{
+    width: 20px;
+    height: 20px;
+}
+hr{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+.precio-arriendo{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
 
