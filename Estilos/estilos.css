@@ -158,7 +158,7 @@ body {
 }
 .contenedor-secundario-buscador input::placeholder{
     color: #626262;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Inter', sans-serif;
 }
 
