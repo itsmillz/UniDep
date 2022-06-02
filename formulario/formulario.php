@@ -17,11 +17,11 @@
     
     <header id="main-header">
         <div class="img-container">
-            <img src="imagenes/UniDep.jpg" alt="">
+            <img src="../imagenes/UniDep.jpg" alt="">
         </div>
         <nav class="navegacion">
             <ul class="ul">
-                <img src="imagenes/perfil-del-usuario.png" alt="">
+                <img src="../imagenes/perfil-del-usuario.png" alt="">
                 <li><a href="prueba.php"><button>Publicar propiedad</button></a></li>
             </ul>
         </nav>
@@ -59,26 +59,68 @@
         <section class="form-registro">
             <p>Registro de las características de su propiedad</p>
             <div class="col-12 mb-2 mt-2">
-            <label class="form-label" for="sector">Sector Propiedad</label>
-            <input class=" form-control" type="text" placeholder="Por favor, ingrese sector de su propiedad" name="sector" required>
+            <label class="form-label" for="sector">Sector propiedad: </label>
+            <input class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required>
             <div class="invalid-feedback">Por favor, ingrese sector de su propiedad.</div>
             </div>
 
             <div class="col-12 mb-2 mt-2">
-            <label class="form-label" for="sector">Precio Propiedad</label>
+            <label class="form-label" for="precio">Precio propiedad: </label>
+            <input class="form-control" type="number"  placeholder="Ingrese el precio de arriendo" name="precio" required>
+            <div class="invalid-feedback">Ingrese precio de su propiedad.</div>
+            </div>
 
 
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="propiedad">Tipo propiedad: </label>
+            <input class="form-control" type="text"  placeholder="Indique si su propiedad es casa o departamento" name="tipo" required>
+            <div class="invalid-feedback">Ingrese tipo de propiedad.</div>
+            </div>
+
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="baño">Baños de su propiedad: </label>
+            <input class="form-control" type="number"  placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required>
+            <div class="invalid-feedback">Ingrese tipo de propiedad.</div>
+            </div>
+           
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="sector">Habitaciones de su propiedad: </label>
+            <input class="form-control" type="number"  placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitaciones" required>
+            <div class="invalid-feedback">Ingrese cantidad de habitaciones.</div>
+            </div>
+            
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="sector">¿Propiedad amoblada?: </label>
+            <input class="form-control" type="text"  placeholder=" Indique si es amoblada o no" name="amoblada" required>
+            <div class="invalid-feedback">Indique si su propiedad es amoblada o no</div>
+            </div>
 
 
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
+            <input class="form-control" type="text"  placeholder=" Indique si es amoblada o no" name="superficie" required>
+            <div class="invalid-feedback">Indique si su propiedad es amoblada o no</div>
+            </div>
 
-            <input class="carac" type="number"  placeholder="Por favor, ingrese el precio de arriendo">
-            <input class="carac" type="text"  placeholder="Por favor, indique si su propiedad es casa o departamento">
-            <input class="carac" type="number" placeholder="Por favor, ingrese cantidad de baño/s que posee su propiedad">
-            <input class="carac" type="text" placeholder="Por favor, ingrese la cantidad de habitaciones que posee su propiedad">
-            <input class="carac" type="text"  placeholder="Por favor, indique si su propiedad esta amoblada o no">
-            <input class="carac" type="text"  placeholder="Por favor, indique la cantidad de metros cuadrados de su propiedad">
-            <input class="carac" type="text" placeholder="¿Tiene estacionamiento? Responda con Si/No">
-            <input class="carac" type="text" name="nombres" id="sector" placeholder="¿Tiene servicio de aseo? Responda con Si/No">
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
+            <input class="form-control" type="text"  placeholder=" ¿Tiene estacionamiento? Responda con Si/No" name="estacionamiento" required>
+            <div class="invalid-feedback">Indique si tiene estacionamiento</div>
+            </div>
+            
+
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="superficie">¿Tiene servicio de aseo?: </label>
+            <input class="form-control" type="text"  placeholder="Responda con Si/No" name="servicio" required>
+            <div class="invalid-feedback">Indique si tiene servicio de aseo</div>
+            </div>
+
+            
+            <div class="col-12 mb-2 mt-2">
+            <label class="form-label" for="superficie">¿Tiene servicio de aseo?: </label>
+            <input class="form-control" type="text"  placeholder="Responda con Si/No" name="servicio" required>
+            <div class="invalid-feedback">Indique si tiene servicio de aseo</div>
+            </div>
             
             <p>Seleccione universidad:</p>
             <?php include("../conexion_bd/conexion.php");?>
