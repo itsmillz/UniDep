@@ -195,7 +195,8 @@ body {
     display: flex;
     background-color: #fff;
     border-radius: 15px;
-    max-width: 1400px;
+    max-width: 1000px;
+    margin-bottom: 15px;
 }
 /* Estilos de la imagen principal */
 .imagen-arriendo{
@@ -243,6 +244,17 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
+.listado_universidad{
+    height: 42px;
+    overflow-y: scroll;
+}
+.listado_universidad p{
+    margin-right: 5px;
+    display: block;
+    text-overflow: clip;
+    white-space: nowrap;
+    padding-right: 15px;
+}
 .calificacion{
     display: flex;
     align-items: center;
@@ -262,6 +274,7 @@ body {
     bottom: 0;
     padding-right: 10px;
     padding-left: 8px;
+    padding-bottom: 6px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
