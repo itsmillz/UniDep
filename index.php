@@ -10,7 +10,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    
+
+<?php
+    if(!isset($_POST['desde'])){$_POST['desde'] = '';}
+    if(!isset($_POST['hasta'])){$_POST['hasta'] = '';}
+    if(!isset($_POST['banos'])){$_POST['banos'] = '';}
+    if(!isset($_POST['habitaciones'])){$_POST['habitaciones'] = '';}
+    if(!isset($_POST['amoblado'])){$_POST['amoblado'] = '';}
+?>
     <div class="main-container">
         <header id="main-header">
             <div class="img-container">
@@ -39,9 +46,40 @@
 
         <main class="contenedor-principal">
             <section class="contenedor-filtros">
-                ...
+                <form action="" method="POST" action="index.php">
+                    <h3>Filtros</h3>
+                    <section class="filtro-precio">
+                        <label for="precio" class="titulo-filtro">Precio</label>
+                        <div class="filtro-precio-interior">
+                            <div class="precio-desde">
+                                <input type="number" name="desde" value="<?php echo $_POST["desde"]; ?>" placeholder="Desde">
+                            </div>
+                            <div class="precio-hasta">
+                                <input type="number" name="hasta" value="<?php echo $_POST["hasta"]; ?>" placeholder="Hasta">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="filtro-general-input">
+                        <label for="banos" class="titulo-filtro">Baños</label>
+                        <input type="number" name="banos" value="<?php echo $_POST["banos"]; ?>">
+                    </section>
+                    <section class="filtro-general-input">
+                        <label for="habitaciones" class="titulo-filtro">Habitaciones</label>
+                        <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>">
+                    </section>
+                    <section class="filtro-amoblado">
+                        <label class="amoblado">Amoblado
+                            <input name="amoblado" type="checkbox" value="<?php echo $_POST["amoblado"]; ?>">
+                            <span class="checkmark"></span>
+                        </label>
+                    </section>
+                    <input class="boton-filtro" type="submit" value="buscar">
+                </form>
             </section>
             <section class="contenedor-arriendos">
+                <div id="datos_filtros">
+                    <?php include('buscador_filtros/filtros.php') ?>
+                </div>
                 <div id="datos_buscador">
                     
                 </div>

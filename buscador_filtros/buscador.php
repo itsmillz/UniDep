@@ -69,55 +69,6 @@
             <?php
             }
         }
-
-    }else{
-        $listar_todo = "SELECT * FROM propiedad";
-        $todos_resultados = $conn->query($listar_todo);
-        while ($todo = $todos_resultados->fetch_assoc()) {
-            ?>
-            <div class="contenedor-arriendo">
-                <div class="imagen-arriendo">
-                            <img src="imagenes/depto.png" alt="">
-                </div>
-                <div class="contenido-arriendo">
-                            <div class="contenido-principal">
-                                <div class="universidad-calificacion">
-                                    <?php
-                                        // Extraemos todas las universidades vinculadas a esa propiedad en especifico.
-                                        $sql_universidad = "SELECT DISTINCT nombre_universidad FROM tiene_2 INNER JOIN universidad ON universidad.id_universidad=tiene_2.id_universidad WHERE tiene_2.id_propiedad = ".$todo['id_propiedad']."";
-                                        $res = $conn->query($sql_universidad);
-                                        echo "<div class='listado_universidad'>";
-                                        while($uni = $res->fetch_assoc()){
-                                            echo "<p> ".$uni['nombre_universidad']." </p>";
-                                        }
-                                        echo "</div>";
-                                    ?>
-                                    <div class="calificacion">
-                                        <img src="imagenes/estrella.png" alt="">
-                                        <p><strong>4.6</strong></p>
-                                    </div>
-                                </div>
-                                <h2><?php echo $todo['sector_propiedad'] ?></h2>
-                                <p class="descripcion-arriendo"><?php echo $todo['descripcion'] ?></p>
-                            </div>
-                            <hr>
-                            <div class="contenido-secundario">
-                                <p class="precio-arriendo">$<?php echo $todo['precio_arriendo'] ?> CLP</p>
-                                <div class="caracteristicas-arriendo">
-                                    <div class="caracteristica-arriendo">
-                                        <img src="imagenes/wifi.png" alt="">
-                                        <p><?php echo $todo['cantidad_habitaciones'] ?> dorm</p>
-                                    </div>
-                                    <div class="caracteristica-arriendo">
-                                        <img src="imagenes/wifi.png" alt="">
-                                        <p><?php echo $todo['cantidad_banos'] ?> baños</p>
-                                    </div>
-                                </div>
-                            </div>
-                </div>
-            </div>
-            <?php
-        }
     }
 ?>
 
