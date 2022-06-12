@@ -1,16 +1,8 @@
 <?php
-try{
+$conn=mysqli_connect('localhost','root','','imageupload');
 
-$host = "mysqltrans.face.ubiobio.cl";
-$dbname = "G51taller_bd";
-$username = "G51taller";
-$password = "G51taller1058";
-date_default_timezone_set('America/Santiago');
-$conn = new mysqli($host,$username,$password,$dbname);
-$conn->set_charset("utf8");
-echo ("conexion exitosa");
-}catch(Exception $e){
-echo "Error: ".$e->getMessage();
+if(mysqli_connect_errno())
+{
+echo 'Failed to connect '.mysqli_connect_error();
 }
-
 ?>
