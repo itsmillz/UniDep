@@ -3,6 +3,12 @@ include '../conexion_bd/conexion.php';
 if(isset($_POST['submit']))
 {
 	$extension=array('jpeg','jpg','png','gif');
+	$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
+        if ($row = mysqli_fetch_row($rs)){
+            $id = trim($row[0]);
+			echo ("la id proveniente de la tabla imagen");
+			echo $id;
+		}
 	foreach ($_FILES['image']['tmp_name'] as $key => $value) {
 		$filename=$_FILES['image']['name'][$key];
 		$filename_tmp=$_FILES['image']['tmp_name'][$key];
@@ -25,7 +31,7 @@ if(isset($_POST['submit']))
 			}
 			$creattime=date('Y-m-d h:i:s');
 			//insert
-			$insertqry="insert into `multiple-images`( `image_name`, `image_createtime`) values ('$finalimg','$creattime')";
+			$insertqry="insert into `multiple-images`( `image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
 			mysqli_query($conn,$insertqry);
 
 			header('Location: ../formulario/indexform.php');

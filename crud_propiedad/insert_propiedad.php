@@ -7,7 +7,8 @@
         // $rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
         // if ($row = mysqli_fetch_row($rs)){
         //     $id = trim($row[0]);
-        //     echo $id;
+        //     echo ("la id proveniente de la tabla propiedad");
+		// 	echo $id;
         // }
         // $extension=array('jpeg','jpg','png','gif');
         // foreach ($_FILES['image']['tmp_name'] as $key => $value) {
