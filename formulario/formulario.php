@@ -175,7 +175,7 @@
                 </div> -->
                 <!-- <input type="submit" name="submit" value="submit" class="btn btn-primary"> -->
                 <p>Revise que todos los datos sean correctos</p>
-                <input class="boton" type="submit" name="submit" value="Publicar Propiedad"> 
+                <input class="boton" type="submit" name="submit" value="Siguiente"> 
             </section>
         </form>
     </div>

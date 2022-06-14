@@ -14,7 +14,6 @@ if(isset($_POST['submit']))
 		$filename_tmp=$_FILES['image']['tmp_name'][$key];
 		echo '<br>';
 		$ext=pathinfo($filename,PATHINFO_EXTENSION);
-
 		$finalimg='';
 		if(in_array($ext,$extension))
 		{
@@ -31,10 +30,10 @@ if(isset($_POST['submit']))
 			}
 			$creattime=date('Y-m-d h:i:s');
 			//insert
-			$insertqry="insert into `multiple-images`( `image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
+			$insertqry="insert into `multiple_images`( `image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
 			mysqli_query($conn,$insertqry);
 
-			header('Location: ../formulario/indexform.php');
+			header('Location: ../formulario/indexform.php?id='.$id);
 		}else
 		{
 			//display error

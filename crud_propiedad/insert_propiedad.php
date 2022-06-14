@@ -4,44 +4,6 @@
     include '../conexion_bd/conexion.php';
     if(isset($_POST['submit'])){
 
-        // $rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
-        // if ($row = mysqli_fetch_row($rs)){
-        //     $id = trim($row[0]);
-        //     echo ("la id proveniente de la tabla propiedad");
-		// 	echo $id;
-        // }
-        // $extension=array('jpeg','jpg','png','gif');
-        // foreach ($_FILES['image']['tmp_name'] as $key => $value) {
-        //     $filename=$_FILES['image']['name'][$key];
-        //     $filename_tmp=$_FILES['image']['tmp_name'][$key];
-        //     echo '<br>';
-        //     $ext=pathinfo($filename, PATHINFO_EXTENSION);
-
-        //     $finalimg='';
-        //     if(in_array($ext,$extension))
-        //     {   
-        //         If(!file_exists('image/'.$filename))
-        //         {
-        //         move_uploaded_file($filename_tmp, 'image/'.$filename);
-        //         $finalimg=$filename;
-        //         }else
-        //         {
-        //             $filename=str_replace('.','-',basename($filename, $ext));
-        //             $newfilename=$filename.time().".".$ext;
-        //             move_uploaded_file($filename_tmp, 'image/'.$newfilename);
-        //             $finalimg=$newfilename;
-        //         }
-        //         $creattime=date('Y-m-d h:i:s');
-        //         //insert
-        //         $insertqry="insert into 'imagenes'('id_imagen', 'imagen', 'id_propiedad') values (null, '$finalimg', '$creattime')";
-        //         mysqli_query($conn,$insertqry);
-
-        //         header('Location: prueba.php');
-        //     }else
-        //     {
-        //             //display error
-        //     }
-        // }
         $sector = $_POST['sector'];
         $precio = $_POST['precio'];
         $tipo = $_POST['tipo'];
@@ -75,6 +37,16 @@
         $conn->query($sql_propiedad);
         echo "insertado correctamente";
         $result="<div class='alert-success'> Datos enviados, gracias.</div>";
-        // header("Location: prueba.php");
+        
+        $id = '';
+        $rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
+        if ($row = mysqli_fetch_row($rs)){
+            $id = trim($row[0]);
+			// echo ("la id proveniente de la tabla imagen");
+			// echo $id;
+		}
+
+
+        header('Location: ../formulario/indexform.php?id='.$id);
     }
 ?>
