@@ -17,27 +17,26 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
+<div>
 	<h4>Subir imagenes de la propiedad: </h4>
 	<hr>
 	<form method="post" enctype="multipart/form-data" action="../formulario/file-upload.php">
 		<div class="form-group">
 			<label>Selecciona todas las imagenes que necesites: </label>
-			<input type="file" name="image[]" class="form-control" multiple />
+			<input type="file" name="image[]" class="form-control" multiple required/>
 		</div>
 		<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 	</form>
 	<table class="table table-hover" >
 		<thead>
 			<th>id</th>
-			<th>imagen</th>
+			<th>Nombre imagen</th>
+			
+			<th>id Propiedad</th>
 			<th>acciones</th>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<!-- <td><img src="images/Alexis_Texas_2017.jpg" alt=""></td> -->
-				<td><a href="" class="btn btn-danger">Eliminar</a></td>
-			</tr>
+			
 			<?php
 			include '../conexion_bd/conexion.php';
 			$consulta = 'select * from multiple_images where id_propiedad ='.$id;
@@ -48,12 +47,16 @@
 					?>
 					<tr>
 						<td> <?php echo $imagen[0] ?>     </td>
-						<td><?php echo $imagen[1] ?></td>
-						
-						<td>  <?php echo '<img src="data:images/'.$imagen[1].' alt="">'  ?>     </td>
-						<td> <?php echo $imagen[2] ?>     </td>
-						<td> <?php echo $imagen[3] ?>     </td>  
-					</tr>
+						<td>  <?php echo '<img src="images/'.$imagen[1]. '" width="200px" alt=""> ' ?>   </td>
+				
+						<td> <?php echo $imagen[4] ?>     </td>  
+						<td>
+						<?php
+							echo "<a class='btn btn-danger' href='crud/delete.php?id=".$imagen[0]."&id_propiedad=".$id."'>Eliminar</a>";
+
+						?>
+				</td>
+						</tr>
 					<?php 
 					
 
@@ -62,13 +65,14 @@
 				
 			}else{
 				?>
-				<p class="w-50 alert alert-danger  m-auto">No hay imagen/es disponible/s</p>
+				<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p>
 				<?php     
 			}
 
 			?>
 		</tbody>
 	</table>
+	</div>
 </div>
 </div>
 </div>
