@@ -8,17 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Propiedad</title>
-    <link rel="stylesheet" href="../Estilos/estilos.css">
-    <link rel="stylesheet" href="form.css">
+    
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="../Estilos/estilos.css">
+        <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
@@ -39,14 +38,15 @@
         </nav>
     </header>
     
-    <div style="margin-top: 3px;" class="upfrm">
+    <div style="margin-top: 89px;" class="upfrm">
         <?php if(!empty($statusMsg)){ ?>
             <p class="status-msg"><?php echo $statusMsg; ?></p>
         <?php } ?>
-        
-        <form name="form-work" class="was-validated mt-3" style="background-color: rgb(231, 231, 231);" action="../crud_propiedad/insert_propiedad.php" method="post" enctype="multipart/form-data">
-            <section class="form-registro" style="margin-top: 3px;">
-                <p>Registro de las características de su propiedad</p>
+        <!-- <p>Registro de las características de su propiedad</p> -->
+        <h1 class="h1">Registro de las características de su propiedad</h1>
+        <form name="form-work" class="was-validated mt-3 w-50 m-auto " style="background-color: #cacaca" action="../crud_propiedad/insert_propiedad.php" method="post" enctype="multipart/form-data">
+            <!-- <section class="form-registro" style="margin-top: 176px"> -->
+                
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="sector">Sector propiedad: </label>
                     <input class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector"
@@ -176,7 +176,7 @@
                 <!-- <input type="submit" name="submit" value="submit" class="btn btn-primary"> -->
                 <p>Revise que todos los datos sean correctos</p>
                 <input class="boton" type="submit" name="submit" value="Siguiente"> 
-            </section>
+            <!-- </section> -->
         </form>
     </div>
 </body>

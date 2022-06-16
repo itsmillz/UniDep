@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #CACACA;
+    background-color: #cacaca;
 }
 
 * {
@@ -42,6 +42,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-left: 102px;
+    margin-top: 14px;
 }
 
 .ul>img {
@@ -75,10 +76,10 @@ body {
 
 .form-registro {
   width: 800px;
-  background: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 30px;
   margin: auto;
-  margin-top: 100px;
+  /* margin-top: 176px !important;  */
   border-radius: 4px;
   font-family: 'calibri';
   color: black;
@@ -127,4 +128,9 @@ body {
   color: rgb(0, 0, 0);
   margin: 16px 0;
   font-size: 16px;
+}
+
+.h1{
+  margin-top: 10px;
+  text-align: center;
 }
