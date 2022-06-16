@@ -85,10 +85,10 @@ align-items: center;
 
 /* CSS */
 .formulario{
- width: 60%;
- background-color: white;
- padding: 15px;
- border-radius: 7px;
+  width: 60%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 7px;
 }
 
 .carac {
@@ -131,7 +131,17 @@ font-size: 16px;
 }
 
 .h1{
-margin-top: 10px;
+margin-top: 30px;
 text-align: center;
 font-size: 30px;
+color: #807f7f;
+margin-bottom: 30px;
+}
+
+.estilo_universidades{
+
+  text-align:center;
+  margin-top: 40px;
+  margin-bottom: 1rem;
+  font-size: 17px;
 }

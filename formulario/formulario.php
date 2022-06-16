@@ -52,6 +52,7 @@
                             required>
                         <!-- <div class="invalid-feedback">Por favor, ingrese sector de su propiedad.</div> -->
                     </div>
+                    <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="precio">Precio propiedad: </label>
@@ -59,6 +60,7 @@
                             required>
                         <!-- <div class="invalid-feedback">Ingrese precio.</div> -->
                     </div>
+                    <br>
 
 
                     <div class="col-12 mb-2 mt-2">
@@ -77,6 +79,7 @@
                         </select>
                         <!-- <div class="invalid-feedback">Ingrese tipo de propiedad.</div> -->
                     </div>
+                    <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="baño">Baños de su propiedad: </label>
@@ -84,14 +87,14 @@
                             placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required>
                         <!-- <div class="invalid-feedback">Ingrese cantidad de baños.</div> -->
                     </div>
-
+                    <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="habitacion">Habitaciones de su propiedad: </label>
                         <input class="form-control" type="number"
                             placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required>
                         <!-- <div class="invalid-feedback">Ingrese cantidad de habitaciones.</div> -->
                     </div>
-
+                    <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="amoblada">¿Propiedad amoblada?: </label>
                         <!--
@@ -108,26 +111,26 @@
                         </div>
                     
                     </div>
-
+                    <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
                         <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required>
                         <!-- <div class="invalid-feedback">Indicar superficie propiedad</div> -->
                     </div>
-
+                    <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="radio1" required="required" name="optradio" value="option1" > Si
                             <label class="form-check-label" for="radio1"></label>
-                            
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
                             <label class="form-check-label" for="radio2"></label>
                             <!-- <div style="left:0 ;" class="invalid-feedback">Por favor marque una opción</div> -->
                         </div>
+                        <br>
                     </div>
 
 
@@ -136,13 +139,14 @@
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="radio1" required="required" name="optradio" value="option1" > Si
                             <label class="form-check-label" for="radio1"></label>
-                            
                         </div>
+                        
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
                             <label class="form-check-label" for="radio2"></label>
                             <!-- <div class="invalid-feedback">Por favor marque una opción</div> -->
                         </div>
+                        <br>
                     </div>
 
 
@@ -151,7 +155,7 @@
                         <input class="form-control" type="text" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required>
                         <!-- <div class="invalid-feedback">Indicar los gastos comunes</div> -->
                     </div>
-
+                    <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="descripcion">Describa la propiedad: </label>
@@ -159,7 +163,7 @@
                         <!-- <div class="invalid-feedback">Descripción breve de su propiedad</div> -->
                     </div>
 
-                    <p>Seleccione universidad:</p>
+                    <p class="estilo_universidades">Seleccione universidad:</p>
                     <?php include("../conexion_bd/conexion.php");?>
                     <div class="col-12 mb-2 mt-2">
 
@@ -184,7 +188,7 @@
                     ?>
                     
                     </div>
-                    <p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
+                    <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
                     <div class="w-100 row">
                         <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Siguiente"> 
                     </div>

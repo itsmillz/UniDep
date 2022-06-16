@@ -40,7 +40,7 @@
 		<div class="row" style="margin-top: 176px;">
 			<div class="col-12" style="background-color: white; border-radius: 7px; margin-left: -35px ">
 				<div class="margin-top:"><br><br>
-					<h4 style="text-align: center;">Selecciona las fotos de tu propiedad: </h4><br><br><br>
+					<h4 style="text-align: center; font-size: 2.5rem">Selecciona las fotos de tu propiedad: </h4><br><br><br>
 					<hr>
 					<form method="post" enctype="multipart/form-data" action="../formulario/file-upload.php">
 						<div class="form-group">
@@ -92,8 +92,8 @@
 				}
 				
 			}else{
-				?>
-							<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p>
+				?>	
+							<br><p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p><br><br><br>
 							<?php     
 			}
 			?>
