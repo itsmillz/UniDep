@@ -17,7 +17,6 @@
 	}
 	?>
 
-
 <header id="main-header" style="margin-bottom: -95px;">
         <div class="img-container">
             <img src="../imagenes/UniDep.jpg" alt="">
@@ -31,6 +30,21 @@
     </header>
 
 
+	<div class="container">
+
+
+
+<p><a href="">
+
+</a></p>
+
+<!-- <p><a href="">
+Selección de fotos.
+</a></p> -->
+
+
+</div>
+
 
 
 
@@ -40,7 +54,7 @@
 		<div class="row" style="margin-top: 176px;">
 			<div class="col-12" style="background-color: white; border-radius: 7px; margin-left: -35px ">
 				<div class="margin-top:"><br><br>
-					<h4 style="text-align: center; font-size: 2.5rem">Selecciona las fotos de tu propiedad: </h4><br><br><br>
+					<h4 class="fotos_indexform">Selecciona las fotos de tu propiedad: </h4><br><br><br>
 					<hr>
 					<form method="post" enctype="multipart/form-data" action="../formulario/file-upload.php">
 						<div class="form-group">
@@ -48,7 +62,7 @@
 							<input type="file" name="image[]" class="form-control" multiple required  style="padding: 0.375rem 0.75rem;"/>
 						</div>
 						<input type="submit" name="submit" value="Enviar" class="btn btn-primary"
-						style="margin-left: 886px;
+						style="margin-left: 1019px;
 						margin-bottom: 15px;
 						width: 89px;
 						text-align: center;

@@ -9,7 +9,9 @@
         $tipo = $_POST['tipo'];
         $baño = $_POST['baño'];
         $habitacion = $_POST['habitacion'];
-        $amoblada = $_POST['amoblada'];
+        $amoblado = $_POST['amoblado'];
+        $estacionamiento = $_POST['estacionamiento'];
+        $servicio_aseo= $_POST['servicio_aseo'];
         $superficie = $_POST['superficie'];
         $estacionamiento = $_POST['estacionamiento'];
         $servicio_aseo = $_POST['servicio_aseo'];
@@ -25,7 +27,9 @@
         $tipo = htmlspecialchars(strip_tags($tipo));
         $baño = htmlspecialchars(strip_tags($baño));
         $habitacion = htmlspecialchars(strip_tags($habitacion));
-        $amoblada = htmlspecialchars(strip_tags($amoblada));
+        $optradio = htmlspecialchars(strip_tags($optradio));
+        $optradio2 = htmlspecialchars(strip_tags($optradio2));
+        // $optradio3 = htmlspecialchars(strip_tags($optradio3));
         $superficie = htmlspecialchars(strip_tags($superficie));
         $estacionamiento = htmlspecialchars(strip_tags($estacionamiento));
         $servicio_aseo = htmlspecialchars(strip_tags($servicio_aseo));
@@ -33,7 +37,7 @@
         $descripcion = htmlspecialchars(strip_tags($descripcion));
 
 
-        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblada', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion')";
+        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion')";
         $conn->query($sql_propiedad);
         echo "insertado correctamente";
         $result="<div class='alert-success'> Datos enviados, gracias.</div>";

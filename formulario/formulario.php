@@ -98,21 +98,22 @@
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="amoblada">¿Propiedad amoblada?: </label>
                         <!--
-                        <input class="form-control" type="boolean" placeholder=" Indique si es amoblada o no" name="amoblada" required>-->
+                        <input class="form-control" type="boolean" placeholder=" Indique si es amoblada o no" name="amoblada" required>
+                        -->
+                    
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio1" required="required" name="optradio" value="option1" > Si
+                            <input type="radio" class="form-check-input" id="radio1" required="required" name="amoblado" value="Sí" > Si
                             <label class="form-check-label" for="radio1"></label>
                             
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
+                            <input type="radio" class="form-check-input" id="radio2" name="amoblado" value="No">No
                             <label class="form-check-label" for="radio2"></label>
                             <!-- <div class="invalid-feedback">Por favor marque una opción</div> -->
                         </div>
                     
                     </div>
                     <br>
-
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
                         <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required>
@@ -122,33 +123,32 @@
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio1" required="required" name="optradio" value="option1" > Si
+                            <input type="radio" class="form-check-input" id="radio1" required="required" name="estacionamiento" value="Sí" > Si
                             <label class="form-check-label" for="radio1"></label>
+                            
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
+                            <input type="radio" class="form-check-input" id="radio2" name="estacionamiento" value="No">No
                             <label class="form-check-label" for="radio2"></label>
                             <!-- <div style="left:0 ;" class="invalid-feedback">Por favor marque una opción</div> -->
                         </div>
-                        <br>
                     </div>
-
+                    <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="servicio_aseo">¿Tiene servicio de aseo?: </label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio1" required="required" name="optradio" value="option1" > Si
+                            <input type="radio" class="form-check-input" id="radio1" required="required" name="servicio_aseo" value="Sí" > Si
                             <label class="form-check-label" for="radio1"></label>
+                            
                         </div>
-                        
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
+                            <input type="radio" class="form-check-input" id="radio2" name="servicio_aseo" value="No">No
                             <label class="form-check-label" for="radio2"></label>
                             <!-- <div class="invalid-feedback">Por favor marque una opción</div> -->
                         </div>
-                        <br>
                     </div>
-
+                <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="gastos_comunes">Gastos comunes: </label>
@@ -162,6 +162,10 @@
                         <textarea name="descripcion" class="form-control"  placeholder=" Indique otras características si lo estima necesario" required ></textarea>
                         <!-- <div class="invalid-feedback">Descripción breve de su propiedad</div> -->
                     </div>
+
+
+
+                    
 
                     <p class="estilo_universidades">Seleccione universidad:</p>
                     <?php include("../conexion_bd/conexion.php");?>
@@ -190,7 +194,8 @@
                     </div>
                     <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
                     <div class="w-100 row">
-                        <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Siguiente"> 
+                    <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar">
+                    <input class="btn btn w-75 m-auto" type="reset" value="Reiniciar el formulario">
                     </div>
             </form>
         </div>
