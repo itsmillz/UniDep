@@ -10,13 +10,16 @@
         $baño = $_POST['baño'];
         $habitacion = $_POST['habitacion'];
         $amoblado = $_POST['amoblado'];
-        $estacionamiento = $_POST['estacionamiento'];
-        $servicio_aseo= $_POST['servicio_aseo'];
         $superficie = $_POST['superficie'];
         $estacionamiento = $_POST['estacionamiento'];
-        $servicio_aseo = $_POST['servicio_aseo'];
+        $servicio_aseo= $_POST['servicio_aseo'];
         $gastos_comunes = $_POST['gastos_comunes'];
         $descripcion = $_POST['descripcion'];
+        // $checkbox = $_POST['checkbox'];
+        // foreach($checkbox as $llave => $valor){
+        //     $ficha2 = "insert into tiene_2 set id_propiedad = '$valor' and id_universidad = '$valor' ";
+        //     $ejecutar_insertar_ficha2=mysqli_query($link, $ficha2);
+        // }
         //Limpiamos las variables
         $sector = trim($sector);
         $precio = trim($precio);
@@ -27,9 +30,7 @@
         $tipo = htmlspecialchars(strip_tags($tipo));
         $baño = htmlspecialchars(strip_tags($baño));
         $habitacion = htmlspecialchars(strip_tags($habitacion));
-        $optradio = htmlspecialchars(strip_tags($optradio));
-        $optradio2 = htmlspecialchars(strip_tags($optradio2));
-        // $optradio3 = htmlspecialchars(strip_tags($optradio3));
+        $amoblado= htmlspecialchars(strip_tags($amoblado));
         $superficie = htmlspecialchars(strip_tags($superficie));
         $estacionamiento = htmlspecialchars(strip_tags($estacionamiento));
         $servicio_aseo = htmlspecialchars(strip_tags($servicio_aseo));

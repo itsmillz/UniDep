@@ -55,7 +55,7 @@ Selección de fotos.
 			<div class="col-12" style="background-color: white; border-radius: 7px; margin-left: -35px ">
 				<div class="margin-top:"><br><br>
 					<h4 class="fotos_indexform">Selecciona las fotos de tu propiedad: </h4><br><br><br>
-					<hr>
+					
 					<form method="post" enctype="multipart/form-data" action="../formulario/file-upload.php">
 						<div class="form-group">
 							<label>Selecciona las imagenes que necesites: </label>
