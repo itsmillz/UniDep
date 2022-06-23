@@ -8,12 +8,12 @@ textArea.addEventListener('input', function(){
 
     let h3 = document.querySelector('h3').innerText = (caracterMax - digitando);
 
-    if(h3 <= 110){
+    if(h3 <= 200){
         document.querySelector('h3').style.color = 'green';
-    if(h3 <= 50){
+    if(h3 <= 100){
         document.querySelector('h3').style.color = 'orange';
         }
-    if(h3 <= 20){
+    if(h3 <= 50){
         document.querySelector('h3').style.color = 'red';
         }
     }

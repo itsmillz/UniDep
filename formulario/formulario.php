@@ -16,9 +16,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="../Estilos/estilos.css">
         <link rel="stylesheet" href="form.css">
+
         <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
         <!-- <script src="js/formulario.js"></script> -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <script src="./jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
@@ -49,15 +51,16 @@
                 <!-- <section class="form-registro" style="margin-top: 176px"> -->
                     
                     <div class="col-12 mb-2 mt-2">
-                        <label class="form-label" for="sector">Sector propiedad: </label>
-                        <input class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required>
+                        <label class="form-label" for="sector">Dirección propiedad: </label>
+                        <input id= "direccion" class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
+                        <p id="mensaje"></p>
                     </div>
                     <br>
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="precio">Precio propiedad: </label>
-                        <input class="form-control" type="number" placeholder="Ingrese el precio de arriendo" name="precio"
-                            required>
+                        <input class="form-control" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" required>
+                        <div class="invalid-feedback">Ingrese un precio mayor a cero</div> 
                     </div>
                     <br>
 
@@ -111,18 +114,18 @@
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="baño">Baños de su propiedad: </label>
                         <input class="form-control" type="number"
-                            placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required>
+                            placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required min="0">
                     </div>
                     <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="habitacion">Habitaciones de su propiedad: </label>
-                        <input class="form-control" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required>
+                        <input class="form-control" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required min="0">
                     </div>
                     <br>
                     
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
-                        <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required>
+                        <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required min="0">
                     </div>
                     <br>
 
@@ -169,15 +172,15 @@
                 <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="gastos_comunes">Gastos comunes: </label>
-                        <input class="form-control" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required>
+                        <input class="form-control" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required min="0">
                     </div>
                     <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="descripcion">Breve descripción del alojamiento: </label>
-                        <textarea maxlength="200" name="descripcion" class="form-control"  placeholder="Describa algunos detalles del alojamiento" required ></textarea>                       
+                        <textarea maxlength="280" name="descripcion" class="form-control"  placeholder="Describa algunos detalles del alojamiento" required ></textarea>                       
                         <!-- <div class="invalid-feedback">Descripción breve</div>  -->
                         <br>
-                        <h2 style="font-size: 1rem;">Carácteres restantes: </h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:148px"> 200</h3>
+                        <h2 style="font-size: 1rem;">Carácteres restantes: </h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:148px"> 280</h3>
                     </div>
 
 
@@ -212,12 +215,13 @@
                     </div>
                     <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
                     <div class="w-100 row">
-                    <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar">
+                    <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar" id="boton">
                     <input class="btn btn w-75 m-auto" type="reset" value="Reiniciar el formulario">
                     </div>
             </form>
         </div>
     </div>
     <script src="contador_caracteres.js"></script>
+    <script src="../js/validar_direccion.js"></script>
 </body>
 </html>

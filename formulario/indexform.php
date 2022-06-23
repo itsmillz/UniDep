@@ -5,8 +5,8 @@
 	<title>Subir Fotos Propiedad</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="../Estilos/estilos.css">
-    <link rel="stylesheet" href="form.css">
+	<link rel="stylesheet" href="../Estilos/estilos.css">
+	<link rel="stylesheet" href="form.css">
 </head>
 
 <body>
@@ -17,33 +17,33 @@
 	}
 	?>
 
-<header id="main-header" style="margin-bottom: -95px;">
-        <div class="img-container">
-            <img src="../imagenes/UniDep.jpg" alt="">
-        </div>
-        <nav class="navegacion">
-            <ul class="ul">
-                <img src="../imagenes/perfil-del-usuario.png" alt="">
-                <li><a href="prueba.php"><button>Publicar propiedad</button></a></li>
-            </ul>
-        </nav>
-    </header>
+	<header id="main-header" style="margin-bottom: -95px;">
+		<div class="img-container">
+			<img src="../imagenes/UniDep.jpg" alt="">
+		</div>
+		<nav class="navegacion">
+			<ul class="ul">
+				<img src="../imagenes/perfil-del-usuario.png" alt="">
+				<li><a href="prueba.php"><button>Publicar propiedad</button></a></li>
+			</ul>
+		</nav>
+	</header>
 
 
 	<div class="container">
 
 
 
-<p><a href="">
+		<p><a href="">
 
-</a></p>
+			</a></p>
 
-<!-- <p><a href="">
+		<!-- <p><a href="">
 Selección de fotos.
 </a></p> -->
 
 
-</div>
+	</div>
 
 
 
@@ -55,20 +55,28 @@ Selección de fotos.
 			<div class="col-12" style="background-color: white; border-radius: 7px; margin-left: -35px ">
 				<div class="margin-top:"><br><br>
 					<h4 class="fotos_indexform">Selecciona las fotos de tu propiedad: </h4><br><br><br>
-					
+
 					<form method="post" enctype="multipart/form-data" action="../formulario/file-upload.php">
 						<div class="form-group">
 							<label>Selecciona las imagenes que necesites: </label>
-							<input type="file" name="image[]" class="form-control" multiple required  style="padding: 0.375rem 0.75rem;"/>
+							<input type="file" name="image[]" class="form-control" multiple required
+								style="padding: 0.375rem 0.75rem;" />
 						</div>
-						<input type="submit" name="submit" value="Enviar" class="btn btn-primary"
-						style="margin-left: 1019px;
+						<input type="submit" name="submit" value="Enviar" class="btn btn-primary" style="margin-left: 1019px;
 						margin-bottom: 15px;
 						width: 89px;
 						text-align: center;
 						margin-top: -85px;
 						height: 36px;">
 					</form>
+
+					<?php
+			include '../conexion_bd/conexion.php';
+			$consulta = 'select * from multiple_images where id_propiedad ='.$id;
+			$resultado = mysqli_query($conn, $consulta);
+			$filas = mysqli_num_rows($resultado);
+			if($filas){
+				?>
 					<table class="table table-hover">
 						<thead>
 							<th>id</th>
@@ -78,11 +86,6 @@ Selección de fotos.
 						</thead>
 						<tbody>
 							<?php
-			include '../conexion_bd/conexion.php';
-			$consulta = 'select * from multiple_images where id_propiedad ='.$id;
-			$resultado = mysqli_query($conn, $consulta);
-			$filas = mysqli_num_rows($resultado);
-			if($filas){
 				while($imagen = $resultado -> fetch_row()){
 					?>
 							<tr>
@@ -104,15 +107,19 @@ Selección de fotos.
 							<?php 
 					
 				}
+				?>
+						</tbody>
+					</table>
+				<?php
 				
 			}else{
-				?>	
-							<br><p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p><br><br><br>
+				?>
+							<br>
+							<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p><br><br><br>
 							<?php     
 			}
 			?>
-						</tbody>
-					</table>
+					
 				</div>
 			</div>
 		</div>
