@@ -59,7 +59,7 @@
 
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="precio">Precio propiedad: </label>
-                        <input class="form-control" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" required>
+                        <input class="form-control" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
                         <div class="invalid-feedback">Ingrese un precio mayor a cero</div> 
                     </div>
                     <br>
@@ -119,7 +119,7 @@
                     <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="habitacion">Habitaciones de su propiedad: </label>
-                        <input class="form-control" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required min="0">
+                        <input class="form-control" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required min="0" max="99">
                     </div>
                     <br>
                     
