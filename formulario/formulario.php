@@ -114,7 +114,7 @@
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="baño">Baños de su propiedad: </label>
                         <input class="form-control" type="number"
-                            placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required min="0">
+                            placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required min="0" max="99">
                     </div>
                     <br>
                     <div class="col-12 mb-2 mt-2">
@@ -125,7 +125,7 @@
                     
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
-                        <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required min="0">
+                        <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required min="0" max="9999">
                     </div>
                     <br>
 
@@ -172,7 +172,7 @@
                 <br>
                     <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="gastos_comunes">Gastos comunes: </label>
-                        <input class="form-control" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required min="0">
+                        <input class="form-control" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required min="0" max="99999">
                     </div>
                     <br>
                     <div class="col-12 mb-2 mt-2">
