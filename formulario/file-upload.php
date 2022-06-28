@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 			}
 			$creattime=date('Y-m-d h:i:s');
 			//insert
-			$insertqry="insert into `multiple_images`( `image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
+			$insertqry="insert into `multiple_images`(`image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
 			mysqli_query($conn,$insertqry);
 
 			header('Location: ../formulario/indexform.php?id='.$id);

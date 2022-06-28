@@ -78,8 +78,6 @@
                     </div>
 
                     <!-- Alternativa diferente de multiples opciones de alojamiento (usar en caso de que la anterior falle) -->
-
-
                     <!-- <div class="col-12 mb-2 mt-2">
                         <label class="form-label" for="amoblada">Tipo de alojamiento: </label>    
                         <div class="form-check">
@@ -106,9 +104,7 @@
                         </div>
                     
                     </div> -->
-                    
                     <!-- (HASTA AQUÍ) Alternativa diferente de multiples opciones de alojamiento (usar en caso de que la anterior falle) -->
-
 
                     <br>
                     <div class="col-12 mb-2 mt-2">

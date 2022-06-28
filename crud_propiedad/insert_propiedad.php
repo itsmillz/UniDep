@@ -38,7 +38,7 @@
         $descripcion = htmlspecialchars(strip_tags($descripcion));
 
 
-        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion')";
+        $sql_propiedad = "insert into propiedad values (null, '$sector', '$descripcion', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$gastos_comunes', '$servicio_aseo')";
         $conn->query($sql_propiedad);
         echo "insertado correctamente";
         $result="<div class='alert-success'> Datos enviados, gracias.</div>";

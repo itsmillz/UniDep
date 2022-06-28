@@ -9,5 +9,6 @@ function buscar_ahora(buscar) {
             document.getElementById("datos_buscador").innerHTML = data;
         }
     });
+    document.getElementById("todos_datos").style.display = "none";
+    document.getElementById("datos_filtros").style.display = "none";
 }
-buscar_ahora();
