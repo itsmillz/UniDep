@@ -5,8 +5,7 @@
 	<title>Subir Fotos Propiedad</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="../Estilos/estilos.css">
-	<link rel="stylesheet" href="form.css">
+	<link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
@@ -17,17 +16,14 @@
 	}
 	?>
 
-	<header id="main-header" style="margin-bottom: -95px;">
-		<div class="img-container">
-			<img src="../imagenes/UniDep.jpg" alt="">
-		</div>
-		<nav class="navegacion">
-			<ul class="ul">
-				<img src="../imagenes/perfil-del-usuario.png" alt="">
-				<li><a href="prueba.php"><button>Publicar propiedad</button></a></li>
-			</ul>
-		</nav>
-	</header>
+	<header class="main-header">
+        <div class="img-logo">
+                <img src="../imagenes/UniDep.jpg" alt="">
+        </div>
+        <nav class="navegacion">
+                <a href="#">Publicar propiedad</a>
+        </nav>
+    </header>
 
 
 	<div class="container">

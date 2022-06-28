@@ -24,15 +24,12 @@
 ?>
 
     <div class="main-container">
-        <header id="main-header">
-            <div class="img-container">
+        <header class="main-header">
+            <div class="img-logo">
                 <img src="imagenes/UniDep.jpg" alt="">
             </div>
             <nav class="navegacion">
-                <ul class="ul">
-                    <img src="imagenes/perfil-del-usuario.png" alt="">
-                    <li><a href=""><button>Publicar propiedad</button></a></li>
-                </ul>
+                <a href="formulario/formulario.php">Publicar propiedad</a>
             </nav>
         </header>
 
