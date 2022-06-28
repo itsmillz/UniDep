@@ -26,10 +26,10 @@
     <div class="main-container">
         <header class="main-header">
             <div class="img-logo">
-                <img src="imagenes/UniDep.jpg" alt="">
+                <a href=""><img src="imagenes/UniDep.jpg" alt=""></a>
             </div>
             <nav class="navegacion">
-                <a href="formulario/formulario.php">Publicar propiedad</a>
+                <a href="form_propiedad/formulario.php">Publicar propiedad</a>
             </nav>
         </header>
 
@@ -44,7 +44,7 @@
             </div>
         </div>
         <!--Incluimos el fichero de la conexión a la BD-->
-        <?php include_once ('conexion_bd/conexion.php') ?>
+        <?php include_once ('db_connection/connection.php') ?>
 
         <main class="contenedor-principal">
             <section class="contenedor-filtros">
@@ -107,17 +107,13 @@
                     <?php include('buscador_filtros/filtros.php') ?>
                 </div>
                 <div id="todos_datos">
-                    <?php
-                        include('buscador_filtros/listado_propiedades.php');
-                    ?>
+                    <?php include('buscador_filtros/listado_propiedades.php'); ?>
                 </div>
             </section>
         </main>
-
     </div>
-
     <!-- SCRIPT -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/buscador.js"></script>
     <script>
         console.log("valor: ",document.getElementById("buscar").value);
     </script>

@@ -15,8 +15,6 @@ $(document).ready(function () {
             async: true,
             data: "direccion=" + sanitizado,
             success: function (response) {
-
-
                 if(response.length > 10) {
                     // la info q m pasa la bd la envia al JSON aquí
                     let data = JSON.parse(response);
@@ -31,23 +29,15 @@ $(document).ready(function () {
                         $("#mensaje").removeClass("alerta2");
                         $("#boton").attr("disabled",true);
                         $("#mensaje").addClass("alerta");
-                        
                     }
                 } else {
                     // $("#mensaje").hide();
-                    
                     $("#mensaje").text("Dirección válida");
                     $("#mensaje").removeClass("alerta");
                     $("#mensaje").addClass("alerta2");
                     $("#boton").attr("disabled",false);
-
                 }
             }
         });
-
-
-
-
-
     });
 });

@@ -1,5 +1,5 @@
 <?php
-    include("../conexion_bd/conexion.php");
+    include("../db_connection/connection.php");
     if ($_POST['buscar'] == "") {
         $bandera = true;
         $contador = 1;

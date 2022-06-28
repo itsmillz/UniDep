@@ -1,5 +1,5 @@
 <?php
-        include("../conexion_bd/conexion.php");
+        include("../db_connection/connection.php");
         if ($_POST['desde'] == '' && $_POST['hasta'] == '' && $_POST['banos'] == '' && $_POST['habitaciones'] == '' && $_POST['amoblado'] == '') {
             $sql = "";
         }else{

@@ -1,5 +1,4 @@
 <?php
-
     if ($_POST['desde'] != '' && $_POST['hasta'] != '' && $_POST['banos'] != '' && $_POST['habitaciones'] != '' && $_POST['amoblado'] != '' && $_POST['tipo'] != '' && $_POST['gastoscomunesdesde'] != '' && $_POST['gastoscomuneshasta'] != '') {
         $all = "SELECT DISTINCT * FROM propiedad";
         $all_list = $conn->query($all);
