@@ -1,7 +1,11 @@
 <?php
     include("../conexion_bd/conexion.php");
-
-    // Verificamos si se ha escrito algo en el input de buscar.
+    if ($_POST['buscar'] == "") {
+        $bandera = true;
+        $contador = 1;
+        $BAN = 1;
+        include("listado_propiedades.php");
+    }
     if ($_POST['buscar'] != "") {
         // Realizamos la consulta SQL para la busqueda.
         $buscador = "SELECT DISTINCT * FROM propiedad INNER JOIN tiene_2 ON tiene_2.id_propiedad=propiedad.id_propiedad INNER JOIN universidad ON universidad.id_universidad=tiene_2.id_universidad WHERE nombre_universidad LIKE LOWER('%".$_POST["buscar"]."%')";
