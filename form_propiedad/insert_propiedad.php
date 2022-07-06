@@ -29,7 +29,7 @@
         $gastos_comunes = htmlspecialchars(strip_tags($gastos_comunes));
         $descripcion = htmlspecialchars(strip_tags($descripcion));
 
-        $sql_propiedad = "insert into propiedad values (null, '$sector', '$descripcion', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$gastos_comunes', '$servicio_aseo')";
+        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion')";
         $conn->query($sql_propiedad);
         $id = '';
         $rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
