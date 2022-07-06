@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','','base_prueba');
+$conn=mysqli_connect('localhost','root','','unidep');
 
 if(mysqli_connect_errno())
 {
