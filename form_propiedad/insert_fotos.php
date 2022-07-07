@@ -30,8 +30,9 @@
 							<label>Selecciona las imagenes que necesites: </label>
 							<input type="file" name="image[]" class="form-control" multiple style="padding: 0.375rem 0.75rem;" required />
 						</div>
-						<input type="submit" name="submit" value="Enviar" class="btn btn-primary" style="margin-left: 1019px; margin-bottom: 15px; width: 89px; text-align: center; margin-top: -85px; height: 36px;">
+						<input type="submit" name="submit" value="Subir Fotos" class="btn btn-primary" style="margin-left: 1011px; margin-bottom: 15px; width: 99px; text-align: center; margin-top: -85px; height: 36px;">
 					</form>
+						<a href="../index.php"><input id="boton" class="btn btn-success w-100 m-auto" type="submit" name="submit" value="Enviar Publicación" style="margin: auto"></a>
 					<?php
 						include '../db_connection/connection.php';
 						$consulta = 'select * from multiple_images where id_propiedad ='.$id;

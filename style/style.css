@@ -14,7 +14,7 @@ body {
 /* TODO: Estilos del header */
 .main-header{
   width: 100%;
-  height: 8vh;
+  height: auto;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -472,3 +472,4 @@ hr {
   .alerta2{
     color: green;
   }
+
