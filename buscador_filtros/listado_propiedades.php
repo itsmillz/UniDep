@@ -1,5 +1,5 @@
 <?php
-    if ($_POST['desde'] != '' && $_POST['hasta'] != '' && $_POST['banos'] != '' && $_POST['habitaciones'] != '' && $_POST['amoblado'] != '' && $_POST['tipo'] != '' && $_POST['gastoscomunesdesde'] != '' && $_POST['gastoscomuneshasta'] != '') {
+    if ($_POST['desde'] != '' && $_POST['hasta'] != '' && $_POST['banos'] != '' && $_POST['habitaciones'] != '' && $_POST['amoblada'] != '' && $_POST['tipo'] != '' && $_POST['gastoscomunesdesde'] != '' && $_POST['gastoscomuneshasta'] != '') {
         $all = "SELECT DISTINCT * FROM propiedad";
         $all_list = $conn->query($all);
         while ($all_listt = $all_list->fetch_assoc()) {
@@ -27,20 +27,20 @@
                                 <p><strong>4.6</strong></p>
                             </div>
                         </div>
-                        <h2><?php echo $all_listt['sector_propiedad'] ?></h2>
+                        <h2><?php echo $all_listt['sector'] ?></h2>
                         <p class="descripcion-arriendo"><?php echo $all_listt['descripcion'] ?></p>
                     </div>
                     <hr>
                     <div class="contenido-secundario">
-                        <p class="precio-arriendo">$<?php echo $all_listt['precio_arriendo'] ?> CLP</p>
+                        <p class="precio-arriendo">$<?php echo $all_listt['precio'] ?> CLP</p>
                         <div class="caracteristicas-arriendo">
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/wifi.png" alt="">
-                                <p><?php echo $all_listt['cantidad_habitaciones'] ?> dorm</p>
+                                <img src="imagenes/cama.png" alt="">
+                                <p><?php echo $all_listt['habitacion'] ?> dorm</p>
                             </div>
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/wifi.png" alt="">
-                                <p><?php echo $all_listt['cantidad_banos'] ?> baños</p>
+                                <img src="imagenes/bano.png" alt="">
+                                <p><?php echo $all_listt['bano'] ?> baños</p>
                             </div>
                         </div>
                     </div>
@@ -76,20 +76,20 @@
                                 <p><strong>4.6</strong></p>
                             </div>
                         </div>
-                        <h2><?php echo $all_listt['sector_propiedad'] ?></h2>
+                        <h2><?php echo $all_listt['sector'] ?></h2>
                         <p class="descripcion-arriendo"><?php echo $all_listt['descripcion'] ?></p>
                     </div>
                     <hr>
                     <div class="contenido-secundario">
-                        <p class="precio-arriendo">$<?php echo $all_listt['precio_arriendo'] ?> CLP</p>
+                        <p class="precio-arriendo">$<?php echo $all_listt['precio'] ?> CLP</p>
                         <div class="caracteristicas-arriendo">
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/wifi.png" alt="">
-                                <p><?php echo $all_listt['cantidad_habitaciones'] ?> dorm</p>
+                                <img src="imagenes/cama.png" alt="">
+                                <p><?php echo $all_listt['habitacion'] ?> dorm</p>
                             </div>
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/wifi.png" alt="">
-                                <p><?php echo $all_listt['cantidad_banos'] ?> baños</p>
+                                <img src="imagenes/bano.png" alt="">
+                                <p><?php echo $all_listt['bano'] ?> baños</p>
                             </div>
                         </div>
                     </div>

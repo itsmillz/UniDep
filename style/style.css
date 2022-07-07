@@ -306,7 +306,7 @@ body {
 }
 .listado_universidad {
   height: 42px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .listado_universidad p {
   margin-right: 5px;

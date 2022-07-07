@@ -51,20 +51,20 @@
                                     <p><strong>4.6</strong></p>
                                 </div>
                             </div>
-                            <h2><?php echo $RESU_FINA['sector_propiedad'] ?></h2>
+                            <h2><?php echo $RESU_FINA['sector'] ?></h2>
                             <p class="descripcion-arriendo"><?php echo $RESU_FINA['descripcion'] ?></p>
                         </div>
                         <hr>
                         <div class="contenido-secundario">
-                            <p class="precio-arriendo">$<?php echo $RESU_FINA['precio_arriendo'] ?> CLP</p>
+                            <p class="precio-arriendo">$<?php echo $RESU_FINA['precio'] ?> CLP</p>
                             <div class="caracteristicas-arriendo">
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/wifi.png" alt="">
-                                    <p><?php echo $RESU_FINA['cantidad_habitaciones'] ?> dorm</p>
+                                    <img src="imagenes/cama.png" alt="">
+                                    <p><?php echo $RESU_FINA['habitacion'] ?> dorm</p>
                                 </div>
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/wifi.png" alt="">
-                                    <p><?php echo $RESU_FINA['cantidad_banos'] ?> baños</p>
+                                    <img src="imagenes/bano.png" alt="">
+                                    <p><?php echo $RESU_FINA['bano'] ?> baños</p>
                                 </div>
                             </div>
                         </div>

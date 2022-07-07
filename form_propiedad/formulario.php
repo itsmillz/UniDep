@@ -43,8 +43,6 @@
                         <option value="">Seleccione el tipo de alojamiento/propiedad</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Casa">Casa</option>
-                        <option value="Habitación">Habitación</option>
-                        <option value="Pensión">Pensión</option>
                     </select>
                 </div>
 

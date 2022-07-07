@@ -16,7 +16,7 @@
     if(!isset($_POST['hasta'])){$_POST['hasta'] = '';}
     if(!isset($_POST['banos'])){$_POST['banos'] = '';}
     if(!isset($_POST['habitaciones'])){$_POST['habitaciones'] = '';}
-    if(!isset($_POST['amoblado'])){$_POST['amoblado'] = '';}
+    if(!isset($_POST['amoblada'])){$_POST['amoblada'] = '';}
     if(!isset($_POST['tipo'])){$_POST['tipo'] = '';}
     if(!isset($_POST['gastoscomunesdesde'])){$_POST['gastoscomunesdesde'] = '';}
     if(!isset($_POST['gastoscomuneshasta'])){$_POST['gastoscomuneshasta'] = '';}
@@ -70,8 +70,8 @@
                         <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>">
                     </section>
                     <section class="filtro-select">
-                        <label class="titulo-filtro">Amoblado</label>
-                        <select name="amoblado" id="amoblado">
+                        <label class="titulo-filtro">amoblada</label>
+                        <select name="amoblada" id="amoblada">
                                 <option value="" selected>Seleccionar</option>
                                 <option value="1">Si</option>
                                 <option value="0">No</option>

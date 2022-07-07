@@ -1,39 +1,39 @@
 <?php
         include("../db_connection/connection.php");
-        if ($_POST['desde'] == '' && $_POST['hasta'] == '' && $_POST['banos'] == '' && $_POST['habitaciones'] == '' && $_POST['amoblado'] == '') {
+        if ($_POST['desde'] == '' && $_POST['hasta'] == '' && $_POST['banos'] == '' && $_POST['habitaciones'] == '' && $_POST['amoblada'] == '') {
             $sql = "";
         }else{
             if ($_POST['desde'] != '') {
                 if ($_POST['hasta'] != '') {
                     if ($_POST['banos'] != '') {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -41,61 +41,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -103,29 +103,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."'";
                                         }
                                     }
                                 }
@@ -133,33 +133,33 @@
                         }
                     }else {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -167,61 +167,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -229,29 +229,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND precio_arriendo <= '".$_POST['hasta']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND precio <= '".$_POST['hasta']."'";
                                         }
                                     }
                                 }
@@ -261,33 +261,33 @@
                 }else {
                     if ($_POST['banos'] != '') {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -295,61 +295,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -357,29 +357,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_banos = '".$_POST['banos']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND bano = '".$_POST['banos']."'";
                                         }
                                     }
                                 }
@@ -387,33 +387,33 @@
                         }
                     }else {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -421,61 +421,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -483,29 +483,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo >= '".$_POST['desde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio >= '".$_POST['desde']."'";
                                         }
                                     }
                                 }
@@ -517,33 +517,33 @@
                 if ($_POST['hasta'] != '') {
                     if ($_POST['banos'] != '') {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -551,61 +551,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -613,29 +613,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_banos = '".$_POST['banos']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND bano = '".$_POST['banos']."'";
                                         }
                                     }
                                 }
@@ -643,33 +643,33 @@
                         }
                     }else {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -677,61 +677,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -739,29 +739,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE precio_arriendo <= '".$_POST['hasta']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE precio <= '".$_POST['hasta']."'";
                                         }
                                     }
                                 }
@@ -771,33 +771,33 @@
                 }else {
                     if ($_POST['banos'] != '') {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -805,61 +805,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -867,29 +867,29 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_banos = '".$_POST['banos']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE bano = '".$_POST['banos']."'";
                                         }
                                     }
                                 }
@@ -897,33 +897,33 @@
                         }
                     }else {
                         if ($_POST['habitaciones'] != '') {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -931,61 +931,61 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE cantidad_habitaciones = '".$_POST['habitaciones']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE habitacion = '".$_POST['habitaciones']."'";
                                         }
                                     }
                                 }
                             }
                         }else {
-                            if ($_POST['amoblado'] != '') {
+                            if ($_POST['amoblada'] != '') {
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE amoblado = '".$_POST['amoblado']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE amoblada = '".$_POST['amoblada']."'";
                                         }
                                     }
                                 }
@@ -993,15 +993,15 @@
                                 if ($_POST['tipo'] != '') {
                                     if ($_POST['gastoscomunesdesde'] != '') {
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE tipo = '".$_POST['tipo']."' AND gastos_comunes >= '".$_POST['gastoscomunesdesde']."'";
                                         }
                                     }else{
                                         if ($_POST['gastoscomuneshasta'] != '') {
-                                            $sql = "SELECT * FROM propiedad WHERE tipo_propiedad = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
+                                            $sql = "SELECT * FROM propiedad WHERE tipo = '".$_POST['tipo']."' AND gastos_comunes <= '".$_POST['gastoscomuneshasta']."' ";
                                         }else{
-                                            $sql = "SELECT * FROM propiedad WHERE tipo_propiedad = '".$_POST['tipo']."'";
+                                            $sql = "SELECT * FROM propiedad WHERE tipo = '".$_POST['tipo']."'";
                                         }
                                     }
                                 }else {
@@ -1055,20 +1055,20 @@
                                                 <p><strong>4.6</strong></p>
                                 </div>
                             </div>
-                            <h2><?php echo $rowSql['sector_propiedad'] ?></h2>
+                            <h2><?php echo $rowSql['sector'] ?></h2>
                             <p class="descripcion-arriendo"><?php echo $rowSql['descripcion'] ?></p>
                         </div>
                         <hr>
                         <div class="contenido-secundario">
-                            <p class="precio-arriendo">$<?php echo $rowSql['precio_arriendo'] ?> CLP</p>
+                            <p class="precio-arriendo">$<?php echo $rowSql['precio'] ?> CLP</p>
                             <div class="caracteristicas-arriendo">
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/wifi.png" alt="">
-                                    <p><?php echo $rowSql['cantidad_habitaciones'] ?> dorm</p>
+                                    <img src="imagenes/cama.png" alt="">
+                                    <p><?php echo $rowSql['habitacion'] ?> dorm</p>
                                 </div>
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/wifi.png" alt="">
-                                    <p><?php echo $rowSql['cantidad_banos'] ?> baños</p>
+                                    <img src="imagenes/bano.png" alt="">
+                                    <p><?php echo $rowSql['bano'] ?> baños</p>
                                 </div>
                             </div>
                         </div>
