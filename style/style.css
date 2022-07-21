@@ -473,3 +473,29 @@ hr {
     color: green;
   }
 
+  .table-wrapper {
+    width: 100%;
+    height: 200px; /* Altura de ejemplo */
+    overflow: auto;
+  }
+  
+  .table-wrapper table {
+    border-collapse:separate;
+    border-spacing: 0;
+  }
+  
+  .table-wrapper table thead {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 0;
+    left: 0;
+  }
+  
+  .table-wrapper table thead th,
+  .table-wrapper table tbody td {
+    border: 1px solid #000;
+    background-color: #FFF;
+  }
+  .tablita{
+    width: auto;
+  }

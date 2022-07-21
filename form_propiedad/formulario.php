@@ -138,26 +138,14 @@
                     <br>
                     <h2 style="font-size: 1rem;">Carácteres restantes: </h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:148px"> 280</h3>
                 </div>
-                <p class="estilo_universidades">Seleccione universidad:</p>
-                <?php include("../db_connection/connection.php");?> 
-                <div class="col-12 mb-2 mt-2">
-                    <?php
-                        $sql = "select * from universidad order by nombre_universidad";
-                        $resultado = mysqli_query($conn, $sql);
-                        $filas = mysqli_num_rows($resultado);
-                        if($filas){
-                            while($universidad = $resultado->fetch_row()){ ?>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="check"value="<?php $universidad[0];?>" id="flexCheckChecked">
-                                    <label class="form-check-label">
-                                        <?php echo $universidad[1]?>
-                                    </label>
-                                </div>
-                            <?php
-                            }
-                        }
-                    ?>
-                </div>
+           <!-- aqui iban las unis -->
+
+
+
+
+
+
+           <!-- hasta aqui -->
                 <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
                 <div class="w-100 row">
                     <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar" id="boton">
