@@ -35,8 +35,9 @@
 							<input type="file" name="image[]" class="form-control" multiple
 								style="padding: 0.375rem 0.75rem;" required />
 						</div>
-						<input type="submit" name="submit" value="Subir Fotos" class="btn btn-primary"
-							style="margin-left: 1011px; margin-bottom: 15px; width: 99px; text-align: center; margin-top: -85px; height: 36px;">
+						<input type="submit" name="submit" value="Subir Fotos" 
+							style="margin-left: 1011px; margin-bottom: 44px; width: 100px; text-align: center; margin-top: -85px; height: 36px;
+							background-color: #f4f4f4; border-radius: 3px">
 					</form>
 
 
@@ -48,13 +49,16 @@
 						$filas = mysqli_num_rows($resultado);
 						if($filas){ ?>
 
-					<div class="table-wrapper">
-					<table class="tablita">
+					
+					<div class="outer-wrapper">
+    				<div class="table-wrapper">
+					<!-- <div class="row"> -->
+					<table class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
 						<thead>
-							<th>id</th>
-							<th>Nombre imagen</th>
-							<th>id Propiedad</th>
-							<th>acciones</th>
+							<th class="col">id</th>
+							<th class="col">Nombre imagen</th>
+							<th class="col">id Propiedad</th>
+							<th class="col">acciones</th>
 						</thead>
 						<tbody>
 							<?php
@@ -77,14 +81,17 @@
 							}?>
 						</tbody>
 					</table>
+					<!-- </div> -->
 					</div>
+					</div>
+					
 					<?php
 						}else{ ?>
 					<br>
 					<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p><br><br><br>
 					<?php     
 						} ?>
-
+					<br><br>
 					<h1 class="fotos_indexform">Selecciona universidad/es vinculadas a tu propiedad:</h1>
 					<br> <br>
 					<form name="form-work" class="was-validated formulario w-100" action="../form_propiedad/file-upload.php" method="post" enctype="multipart/form-data">
@@ -126,8 +133,8 @@
 
 						<input type="checkbox" id="ubb" name="ubb" value="ubb">
 						<label>Universidad del Bío-Bío</label><br>
-
-						<a href="../index.php"><input id="boton" class="btn btn-success w-100 m-auto" type="submit"
+						<br>
+						<a href="../index.php"><input id="boton" class="w3-panel w3-blue-grey w-100 m-auto" type="submit"
 							name="submituniversidades" value="Enviar Publicación" style="margin: auto"></a>
 					</form>
 				</div>
