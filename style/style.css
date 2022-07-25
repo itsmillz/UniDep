@@ -111,6 +111,13 @@ body {
   font-size: 18px;
   font-family: "Inter", sans-serif;
 }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .h1 {
   float: left;
   margin: 25px;
@@ -213,6 +220,9 @@ body {
   border-radius: 5px;
   font-size: 15px;
   outline: none;
+}
+.filtro-general-input input::placeholder {
+  color: rgb(63, 63, 63);
 }
 /* Estilos de amoblado y tipo */
 .filtro-select{
