@@ -56,10 +56,10 @@
                         </div>
                         <hr>
                         <div class="contenido-secundario">
-                            <p class="precio-arriendo">$<?php echo $RESU_FINA['precio'] ?> CLP</p>
+                            <p class="precio-arriendo">$<?php echo number_format($RESU_FINA['precio'],0,",","."); ?> CLP</p>
                             <div class="caracteristicas-arriendo">
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/cama.png" alt="">
+                                    <img style="margin-right: 6px;" src="imagenes/cama.png" alt="">
                                     <p><?php echo $RESU_FINA['habitacion'] ?> dorm</p>
                                 </div>
                                 <div class="caracteristica-arriendo">
