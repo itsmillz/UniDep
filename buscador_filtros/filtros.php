@@ -1060,10 +1060,10 @@
                         </div>
                         <hr>
                         <div class="contenido-secundario">
-                            <p class="precio-arriendo">$<?php echo $rowSql['precio'] ?> CLP</p>
+                            <p class="precio-arriendo">$<?php echo number_format($rowSql['precio'],0,",","."); ?> CLP</p>
                             <div class="caracteristicas-arriendo">
                                 <div class="caracteristica-arriendo">
-                                    <img src="imagenes/cama.png" alt="">
+                                    <img style="margin-right: 6px;" src="imagenes/cama.png" alt="">
                                     <p><?php echo $rowSql['habitacion'] ?> dorm</p>
                                 </div>
                                 <div class="caracteristica-arriendo">

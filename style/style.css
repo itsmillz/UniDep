@@ -50,7 +50,7 @@ body {
   font-size: 200%;
   text-align: center;
   font: bold 27px verdana, sans-serif;
-  padding: 100px 100px 20px 100px;
+  padding: 45px 7px;
   margin-top: 0px;
   background-image: url("../imagenes/depto.png");
   background-repeat: no-repeat;
@@ -88,6 +88,7 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 10px;
+  
 }
 .contenedor-secundario-buscador {
   border-radius: 5px;
@@ -111,6 +112,13 @@ body {
   font-size: 18px;
   font-family: "Inter", sans-serif;
 }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .h1 {
   float: left;
   margin: 25px;
@@ -125,8 +133,7 @@ body {
 /* TODO: CONTENIDO PRINCIPAL DE BODY */
 .contenedor-principal {
   display: flex;
-  width: 100%;
-  padding: 20px 100px;
+  margin-top: 20px;
 }
 /* Estilos de los filtros laterales */
 .contenedor-filtros {
@@ -135,6 +142,7 @@ body {
   height: 600px;
   padding: 13px;
   border-radius: 15px;
+  margin-left: 100px;
 }
 .contenedor-filtros h3 {
   font-family: "Inter", sans-serif;
@@ -214,6 +222,9 @@ body {
   font-size: 15px;
   outline: none;
 }
+.filtro-general-input input::placeholder {
+  color: rgb(63, 63, 63);
+}
 /* Estilos de amoblado y tipo */
 .filtro-select{
   margin-bottom: 8px;
@@ -247,122 +258,110 @@ body {
 
 /* TODO: Estilos del listado de los arriendos (main) */
 .contenedor-arriendos {
-  width: 100%;
-  padding: 0 80px;
+  margin-left: 100px;
 }
 /* Estilos de los arriendos individuales */
 .contenedor-arriendo {
-  display: flex;
   background-color: #fff;
+  margin-bottom: 25px;
+  display: flex;
+	max-width: 100%;
+	overflow: hidden;
+	width: 900px;
   border-radius: 15px;
-  max-width: 1000px;
-  margin-bottom: 15px;
 }
 /* Estilos de la imagen principal */
 .imagen-arriendo {
-  width: 700px;
-  height: 200px;
-  min-height: 200px;
-  max-height: 200px;
+  max-width: 880px;
+  line-height:0;
 }
 .imagen-arriendo img {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
+  width: 340px;
+  display:block
 }
 /* Estilos de la información principal */
 .contenido-arriendo {
-  width: 100%;
   position: relative;
+	width: 100%;
 }
 .contenido-principal {
   width: 100%;
 }
 .contenido-principal h2 {
-  margin: 8px 0;
-  padding-left: 8px;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  font-size: 26px;
+  margin-left: 5px;
+  font-size: 25px;
+  margin-top: 5px;
 }
 .descripcion-arriendo {
-  margin-bottom: 60px;
-  padding-left: 8px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  margin-left: 5px;
+  margin-top: 9px;
+  color: #474747;
+  margin-bottom: 19px;
 }
 /* Estilos de las universidades cercanas y la calificacion */
 .universidad-calificacion {
   display: flex;
   justify-content: space-between;
-  padding-left: 8px;
-  padding-right: 10px;
-  margin: 8px 0;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  margin-top: 8px;
 }
-.listado_universidad {
-  height: 42px;
-  overflow-y: auto;
+.listado_universidad{
+  display: flex;
+  overflow-x: scroll;
+  max-width: 500px;
+  margin-left: 5px;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .listado_universidad p {
-  margin-right: 5px;
-  display: block;
-  text-overflow: clip;
   white-space: nowrap;
-  padding-right: 15px;
+  margin-right: 45px;
+  color: #646464;
 }
 .calificacion {
   display: flex;
+  margin-right: 5px;
   align-items: center;
+  align-content: center;
 }
 .calificacion img {
   width: 20px;
-  height: 20px;
+  margin-right: 5px;
 }
 
 /* Estilos de los contenidos secundarios */
 .contenido-secundario {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-self: flex-end;
   position: absolute;
-  bottom: 0;
-  padding-right: 10px;
-  padding-left: 8px;
-  padding-bottom: 6px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  bottom: 8px;
+  left: 0;
+  right: 0;
 }
 .caracteristicas-arriendo {
   display: flex;
 }
 .caracteristica-arriendo {
   display: flex;
-  flex-direction: column;
+  margin-right: 10px;
   align-items: center;
-  margin-right: 7px;
 }
 .caracteristica-arriendo img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
 }
-.caracteristica-arriendo p {
-  font-size: 14px;
-}
+
 hr {
   position: absolute;
-  bottom: 50px;
+  bottom: 45px;
+  left: 0;
+  right: 0;
   width: 100%;
 }
 .precio-arriendo {
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 5px;
 }
 
 /* TODO: Estilos de los formularios */
@@ -384,7 +383,7 @@ hr {
     margin-left: 25px;
   }
   
-  /* CSS */
+  /* TODO: Estilos del formulario selección universidad / subir fotos */
   .formulario{
     width: 60%;
     background-color: white;
@@ -406,7 +405,6 @@ hr {
   
   .form-registro p {
   height: 40px;
-  /* text-align: center; */
   font-size: 25px;
   line-height: 40px;
   }
@@ -440,7 +438,6 @@ hr {
   }
   
   .estilo_universidades{
-  
     text-align:center;
     margin-top: 40px;
     margin-bottom: 1rem;
@@ -448,12 +445,9 @@ hr {
   }
   
   .fotos_indexform{
-  
     text-align: center;
     font-size: 35px;
     color: #807f7f
-  
-  
   }
   
   .box{
@@ -480,15 +474,12 @@ hr {
 
 }
 
-
 .heading {
     display: flex;
     background-color: #232f3e;
     box-shadow: 0px 1px 2px #232f3e;
 
 }
-
-
 
 .outer-wrapper {
     margin: 10px;
@@ -499,11 +490,8 @@ hr {
     /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9); */
     /* max-width: fit-content; */
     max-height: fit-content;
-
-    
 }
 .table-wrapper {
-
     overflow-y: scroll;
     overflow-x: scroll;
     height: fit-content;
@@ -516,46 +504,28 @@ hr {
     
 }
 
-
 table {
-    
     min-width: max-content;
-    
     border-collapse: separate;
     border-spacing: 0px;    
-    
 }
 
-
-
 table th{
-    /* position: sticky;  */
-    /* top: 0px; */
-    
     background-color: #e2e6e88c;
     color: rgb(0, 0, 0);
-    
     text-align: center;
     font-weight: normal;
-    /* font-size: 18px; */
-    /* outline: 0.7px solid black; */
-    /* border: 1.5px solid black; */
-
 } 
-
-
 
 table th, table td {
     
     padding: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
 }
 
 table td {
     text-align: left;
-    
     font-size: 15px;
     border: 1px solid rgb(177, 177, 177);
     padding-left: 100px;
@@ -569,4 +539,186 @@ table td {
   height: 40px;
 	background-color: #E9E9ED;
   border-radius: 3px;
+}
+
+
+/* TODO: Responsive pagina inicial */
+
+@media only screen and (max-width: 1586px){
+  .contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  /* Ocultamos el filtro principal */
+  .contenedor-filtros{
+    display: none;
+  }
+  /* Ocultamos el buscador */
+  .contenedor-principal-buscador{
+    display: none;
+  }
+
+  .contenedor-principal{
+    padding-top: 0;
+  }
+  /* Estilos del filtrado */
+  .buscador-filtrado{
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    top: 0;
+    z-index: 2;
+    align-items: center;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .contenedor-responsive-buscador{
+    background-color: #fff;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .contenedor-responsive-buscador input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    font-size: 20px;
+  }
+  .filter-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-style: none;
+    background-color: #fff;
+    margin-right: 10px;
+  }
+  .filter-button svg{
+    width: 25px;
+  }
+  .filter-button p{
+    font-size: 20px;
+    margin-left: 4px;
+  }
+  
+  .modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 2;
+  }
+  .modal__container{
+    width: 50%;
+    max-width: 700px;
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal--show{
+    opacity: 1;
+    display: block;
+    pointer-events: unset;
+  }
+  .contenedor-arriendos{
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+  .contenido-principal{
+    margin-bottom: 55px;
+  }
+}
+@media only screen and (min-width: 1586px){
+  .buscador-filtrado{
+    display: none;
+  }
+  .modal{
+    display: none;
+  }
+}
+@media only screen and (max-width: 946px){
+
+  .contenedor-arriendo{
+    background-image: url("../imagenes/depto.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: border-box;
+    background-clip: padding-box;
+    background-size: cover;
+    width: 100%;
+  }
+  .contenedor-arriendos{
+    margin: 0 40px;
+  }
+  .contenido-arriendo{
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+  }
+  .contenido-principal{
+    color: #fff;
+  }
+  .contenido-secundario{
+    color: #fff;
+  }
+  .imagen-arriendo{
+    display: none;
+  }
+  .listado_universidad{
+    display: flex;
+    scrollbar-width: none;
+    height: auto;
+    margin-right: 15px;
+  }
+  .listado_universidad p{
+    color: #fff;
+  }
+  .descripcion-arriendo{
+    color: #fff;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .calificacion img{
+    margin-right: 6px;
+  }
+  .caracteristica-arriendo img{
+    filter: invert(5)
+  }
+  .descripcion-arriendo{
+    margin-right: 25px;
+  }
+  .segundo-container{
+    padding: 15px 7px;
+  }
+}
+@media only screen and (max-width: 430px){
+
+  .precio-arriendo{
+    font-size: 18px;
+  }
+  .caracteristica-arriendo img{
+    display: none;
+  }
 }

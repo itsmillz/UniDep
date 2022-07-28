@@ -31,10 +31,10 @@
                     </div>
                     <hr>
                     <div class="contenido-secundario">
-                        <p class="precio-arriendo">$<?php echo $all_listt['precio'] ?> CLP</p>
+                        <p class="precio-arriendo">$<?php echo number_format($all_listt['precio'],0,",","."); ?> CLP</p>
                         <div class="caracteristicas-arriendo">
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/cama.png" alt="">
+                                <img style="margin-right: 6px;" src="imagenes/cama.png" alt="">
                                 <p><?php echo $all_listt['habitacion'] ?> dorm</p>
                             </div>
                             <div class="caracteristica-arriendo">
@@ -80,10 +80,10 @@
                     </div>
                     <hr>
                     <div class="contenido-secundario">
-                        <p class="precio-arriendo">$<?php echo $all_listt['precio'] ?> CLP</p>
+                        <p class="precio-arriendo">$<?php echo number_format($all_listt['precio'],0,",","."); ?> CLP</p>
                         <div class="caracteristicas-arriendo">
                             <div class="caracteristica-arriendo">
-                                <img src="imagenes/cama.png" alt="">
+                                <img style="margin-right: 6px;" src="imagenes/cama.png" alt="">
                                 <p><?php echo $all_listt['habitacion'] ?> dorm</p>
                             </div>
                             <div class="caracteristica-arriendo">
