@@ -1,12 +1,13 @@
 <?php
 include '../db_connection/connection.php';
 if(isset($_POST['submit'])){
-	$extension=array('jpeg','jpg','png','gif');
+	$extension=array('jpeg','jpg','png','gif', 'webp');
 	$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
     if ($row = mysqli_fetch_row($rs)){
         $id = trim($row[0]);
-		echo ("la id proveniente de la tabla imagen");
-		echo $id;
+		// echo ("la id proveniente de la tabla imagen");
+		// echo $id;
+		echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
 	}
 	foreach ($_FILES['image']['tmp_name'] as $key => $value) {
 		$filename=$_FILES['image']['name'][$key];
@@ -36,8 +37,10 @@ if(isset($_POST['submit'])){
 
 
 }
-if(isset($_POST['submituniversidades'])){
-
+print_r($_POST["submituniversidades"]);
+if(!empty($_POST["universidades"])){
+		
+	    /*
 		$ucsc="";
 		$uss="";
 		$udp="";
@@ -51,13 +54,21 @@ if(isset($_POST['submituniversidades'])){
 		$udd="";
 		$udec="";
 		$ubb="";
+		*/
+		$id_propiedad = "";
 		$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
 			if ($row = mysqli_fetch_row($rs)){
-				$id = trim($row[0]);
-				echo ("la id proveniente de la tabla imagen");
-				echo $id;
+				$id_propiedad = trim($row[0]);
+				
 			}
-
+			echo "id propiedad = $id_propiedad";
+			foreach($_POST["universidades"] as $id_universidad){
+				$SQL = "insert into tiene_2 values ($id_universidad , $id_propiedad)";
+				// echo $SQL;
+				$conn -> query($SQL);
+				
+			}
+/*
 if(isset($_POST['ucsc'])){
 	$ucsc = "insert into `tiene_2` (`id_universidad`, `id_propiedad`) values (1, $id)";
 	$conn->query($ucsc);
@@ -121,7 +132,10 @@ if(isset($_POST['udec'])){
 if(isset($_POST['ubb'])){
 	$ubb = "insert into `tiene_2` (`id_universidad`, `id_propiedad`) values (13 , $id )";
 	$conn->query($ubb);
-	}
+}
+*/
+
+
 
 	header('Location:../index.php');
 }

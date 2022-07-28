@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onLoad="limpiarform">
     <div class="main-container">
         <header class="main-header">
             <div class="img-logo">
@@ -23,7 +23,7 @@
                 <p class="status-msg"><?php echo $statusMsg; ?></p>
             <?php } ?>
             <h1 class="h1">Registro de las características de su propiedad</h1>
-            <form name="form-work" class="was-validated formulario" action="insert_propiedad.php" method="post" enctype="multipart/form-data">
+            <form name="form-work" class="was-validated formulario" action="insert_propiedad.php" id="formulario" method="post" enctype="multipart/form-data">
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="sector">Dirección propiedad: </label>
                     <input id= "direccion" class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
@@ -32,14 +32,14 @@
                 <br>
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="precio">Precio propiedad: </label>
-                    <input class="form-control" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
+                    <input class="form-control" id="precio" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
                     <div class="invalid-feedback">Ingrese un precio mayor a cero</div> 
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="propiedad">Tipo de alojamiento: </label>
-                    <select class="form-control" required name="tipo" id="">
+                    <select class="form-control" required name="tipo" id="select_tipo">
                         <option value="">Seleccione el tipo de alojamiento/propiedad</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Casa">Casa</option>
@@ -101,7 +101,7 @@
                         <input type="radio" class="form-check-input" id="radio2" name="amoblado" value="No">No
                         <label class="form-check-label" for="radio2"></label>
                     </div
-                <br>
+            </br>
                 </div>
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
@@ -136,7 +136,8 @@
                     <label class="form-label" for="descripcion">Breve descripción del alojamiento: </label>
                     <textarea maxlength="280" name="descripcion" class="form-control"  placeholder="Describa algunos detalles del alojamiento" required ></textarea>                       
                     <br>
-                    <h2 style="font-size: 1rem;">Carácteres restantes: </h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:148px"> 280</h3>
+                    <div>
+                    <h2 id="h2" style="font-size: 1rem;"></h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:164px">280</h3>
                 </div>
            <!-- aqui iban las unis -->
 
@@ -156,5 +157,10 @@
     </div>
     <script src="../js/contador_caracteres.js"></script>
     <script src="../js/validar_direccion.js"></script>
+    <script>
+        function limpiarForm(){
+            document.form-work.reset();
+        }
+    </script>
 </body>
 </html>
