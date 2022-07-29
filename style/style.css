@@ -447,7 +447,8 @@ hr {
   .fotos_indexform{
     text-align: center;
     font-size: 35px;
-    color: #807f7f
+    color: #807f7f;
+    margin: 35px 0;
   }
   
   .box{
@@ -713,6 +714,42 @@ table td {
     padding: 15px 7px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .img-logo a img{
+    width: 130px;
+  }
+  .fotos_indexform{
+    font-size: 25px;
+  }
+  .list_image{
+    text-align: center;
+  }
+  .list_image img{
+    width: 130px;
+  }
+  .titulo-tabla{
+    width: 200px;
+  }
+  .titulo-eliminar{
+    width: 100px;
+  }
+  .list_button{
+    text-align: center;
+  }
+  table td{
+    padding: 0;
+  }
+  .list_university_res{
+    padding: 0;
+  }
+  .form-check{
+    padding: 0;
+  }
+  .cont-university{
+    padding: 0;
+    margin: 0;
+  }
+}
 @media only screen and (max-width: 430px){
 
   .precio-arriendo{
@@ -720,5 +757,14 @@ table td {
   }
   .caracteristica-arriendo img{
     display: none;
+  }
+  .list_image img{
+    width: 100px;
+  }
+  .titulo-tabla{
+    width: 100px;
+  }
+  .titulo-eliminar{
+    width: 80px;
   }
 }

@@ -26,18 +26,15 @@
 	</div>
 	<div class="container">
 		<div class="row" style="margin-top: 70px;">
-			<div class="col-12" style="background-color: white; border-radius: 7px; margin-left: -35px ">
-				<div class="margin-top:"><br><br>
+			<div class="col-12" style="background-color: white; border-radius: 7px;">
+				<div class="margin-top:">
 
-					<h4 class="fotos_indexform">Seleccione las fotos de su propiedad: </h4><br><br><br>
+					<h4 class="fotos_indexform">Seleccione las fotos de su propiedad: </h4>
 					<form method="post" enctype="multipart/form-data" action="../form_propiedad/file-upload.php">
 					<label>Seleccione las imágenes que necesite: </label>
-						<div class=" w-100">
-							<div class="col-12 row">
-							<input type="file" name="image[]" class="form-control col-10" multiple
-								style="padding: 0.375rem 0.75rem;" required/>
-								<input type="submit" name="submit" value="Subir Fotos" class="border boton_fotos btn btn-light col-2 text-white" style="border:2px; background-color: #3F9D25">
-							</div>
+						<div class="w-100 d-flex">
+							<input type="file" name="image[]" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
+							<input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	
 						</div>
 					</form>
 
@@ -54,21 +51,21 @@
 					<div class="outer-wrapper">
     				<div class="table-wrapper">
 					<!-- <div class="row"> -->
-					<table class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
+					<table class="col-xs-7 table-bordered table-striped table-condensed table-fixed w-100">
 						<thead>
 							<!-- <th class="col">id</th> -->
-							<th class="col">Imagen</th>
+							<th class="col titulo-tabla">Imagen</th>
 							<!-- <th class="col">id Propiedad</th> -->
-							<th class="col">¿Desea eliminar?</th>
+							<th class="col titulo-eliminar">¿Desea eliminar?</th>
 						</thead>
 						<tbody>
 							<?php
 							while($imagen = $resultado -> fetch_row()){ ?>
 							<tr>
-								<td>
+								<td class="list_image">
 									<?php echo '<img src="images/'.$imagen[1]. '" width="200px" alt=""> ' ?>
 								</td>
-								<td>
+								<td class="list_button">
 									<?php echo "<a class='btn btn-danger' href='crud/delete.php?id=".$imagen[0]."&id_propiedad=".$id."'>Eliminar</a>"; ?>
 								</td>
 							</tr>
@@ -83,12 +80,12 @@
 					<?php
 						}else{ ?>
 					<br>
-					<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p><br><br><br>
+					<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p>
 					<?php
 						} ?>
-					<br><br>
+					
 					<h1 class="fotos_indexform">Selección de universidad/es cercanas a su propiedad:</h1>
-					<br> <br>
+					
 					<form name="form-work" id="form" class="was-validated formulario w-100" action="../form_propiedad/file-upload.php" method="post" enctype="multipart/form-data">
 						
 					<?php include("../db_connection/connection.php");?> 
@@ -111,8 +108,11 @@
 								}
 							}
 						?>
-						<input id="boton" class="w3-panel w-75 m-auto text-white  pt-1 pb-1 rounded" type="submit"
+						<div style="width:100%; display:flex; justify-content:center; margin-top:15px; cursor:pointer;">
+							<input id="boton" class="w3-panel w-75 m-auto text-black pt-1 pb-1 rounded" type="submit"
 							name="submituniversidades" value="Enviar Publicación" style="margin: auto">
+						</div>
+						
 						<!-- <input type="checkbox" id="ucsc" name="ucsc" value="ucsc">
 						<label>Universidad Católica de la Santísima Concepción</label><br>
 
