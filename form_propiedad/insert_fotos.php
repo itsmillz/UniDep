@@ -35,8 +35,8 @@
 						<div class=" w-100">
 							<div class="col-12 row">
 							<input type="file" name="image[]" class="form-control col-10" multiple
-								style="padding: 0.375rem 0.75rem;" required />
-								<input type="submit" name="submit" value="Subir Fotos" class="border boton_fotos btn btn-light col-2 text-white" style="border:2px; background-color: #3F9D25"
+								style="padding: 0.375rem 0.75rem;" required/>
+								<input type="submit" name="submit" value="Subir Fotos" class="border boton_fotos btn btn-light col-2 text-white" style="border:2px; background-color: #3F9D25">
 							</div>
 						</div>
 					</form>
