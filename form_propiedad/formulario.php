@@ -94,36 +94,36 @@
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="amoblada">¿Propiedad amoblada?: </label>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio1" required="required" name="amoblado" value="Sí" > Sí
-                        <label class="form-check-label" for="radio1"></label>
+                        <input type="radio" class="form-check-input" id="radio1" required="required" name="amoblado" value="Sí" > 
+                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio2" name="amoblado" value="No">No
-                        <label class="form-check-label" for="radio2"></label>
-                    </div
+                        <input type="radio" class="form-check-input" id="radio2" name="amoblado" value="No">
+                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
+                    </div>
             </br>
                 </div>
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio1" required="required" name="estacionamiento" value="Sí" > Sí
-                        <label class="form-check-label" for="radio1"></label>
+                        <input type="radio" class="form-check-input" id="radio1" required="required" name="estacionamiento" value="Sí" >
+                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio2" name="estacionamiento" value="No">No
-                        <label class="form-check-label" for="radio2"></label>
+                        <input type="radio" class="form-check-input" id="radio2" name="estacionamiento" value="No">
+                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
                     </div>
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="servicio_aseo">¿Tiene servicio de aseo?: </label>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio1" required="required" name="servicio_aseo" value="Sí" > Sí
-                        <label class="form-check-label" for="radio1"></label>
+                        <input type="radio" class="form-check-input" id="radio1" required="required" name="servicio_aseo" value="Sí" >
+                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="radio2" name="servicio_aseo" value="No">No
-                        <label class="form-check-label" for="radio2"></label>
+                        <input type="radio" class="form-check-input" id="radio2" name="servicio_aseo" value="No">
+                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
                     </div>
                 </div>
                 <br>

@@ -744,10 +744,24 @@ table td {
   }
   .form-check{
     padding: 0;
+    display: flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
   }
   .cont-university{
     padding: 0;
     margin: 0;
+  }
+  .form-check-input{
+    margin: 0;
+    display: block;
+    width: 20px;
+  }
+  .form-check-label{
+    display: block;
+    width: 10px;
+    margin-left: 20px;
   }
 }
 @media only screen and (max-width: 430px){
