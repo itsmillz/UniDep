@@ -7,7 +7,9 @@ if(isset($_POST['submit'])){
         $id = trim($row[0]);
 		// echo ("la id proveniente de la tabla imagen");
 		// echo $id;
-		echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
+		echo '<script language="javascript">alert("Por favor, retroceda y suba las imágenes con los formatos siguientes: jpeg, jpg, png, gif o webp");</script>';
+		// echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
+
 	}
 	foreach ($_FILES['image']['tmp_name'] as $key => $value) {
 		$filename=$_FILES['image']['name'][$key];

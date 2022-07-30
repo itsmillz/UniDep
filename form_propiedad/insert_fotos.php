@@ -31,7 +31,7 @@
 
 					<h4 class="fotos_indexform">Seleccione las fotos de su propiedad: </h4>
 					<form method="post" enctype="multipart/form-data" action="../form_propiedad/file-upload.php">
-					<label>Seleccione las imágenes que necesite: </label>
+					<label>Seleccione, si lo desea, las imágenes que necesite: </label>
 						<div class="w-100 d-flex">
 							<input type="file" name="image[]" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
 							<input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	
@@ -80,11 +80,11 @@
 					<?php
 						}else{ ?>
 					<br>
-					<p class="w-50 alert alert-danger mt-2 m-auto">No hay imagen/es disponible/s</p>
+					<p class="w-50 alert alert-danger mt-2 m-auto border-0">¡Oh, vaya!... parece que todavía no has subido ninguna imagen :(</p>
 					<?php
 						} ?>
 					
-					<h1 class="fotos_indexform">Selección de universidad/es cercanas a su propiedad:</h1>
+					<h1 class="fotos_indexform">Seleccione al menos una universidad cercana a su propiedad:</h1>
 					
 					<form name="form-work" id="form" class="was-validated formulario w-100" action="../form_propiedad/file-upload.php" method="post" enctype="multipart/form-data">
 						
@@ -108,8 +108,8 @@
 								}
 							}
 						?>
-						<div style="width:100%; display:flex; justify-content:center; margin-top:15px; cursor:pointer;">
-							<input id="boton" class="w3-panel w-75 m-auto text-black pt-1 pb-1 rounded" type="submit"
+						<div style="width:100%; display:flex; justify-content:center; margin-top:15px;">
+							<input id="boton" style="cursor:pointer" class="color_boton w3-panel w-75 m-auto text-black pt-1 pb-1 rounded" type="submit"
 							name="submituniversidades" value="Enviar Publicación" style="margin: auto">
 						</div>
 						

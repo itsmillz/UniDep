@@ -5,6 +5,13 @@ body {
   background-color: #cacaca;
 }
 
+.color_boton{
+  background-color: #3F9D25;
+}
+.color_boton:disabled{
+  background-color: #cacaca; 
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -758,6 +765,7 @@ table td {
     display: block;
     width: 20px;
   }
+
   .form-check-label{
     display: block;
     width: 10px;
@@ -782,3 +790,4 @@ table td {
     width: 80px;
   }
 }
+

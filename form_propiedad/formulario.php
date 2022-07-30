@@ -33,7 +33,7 @@
                 <div class="col-12 mb-2 mt-2">
                     <label class="form-label" for="precio">Precio propiedad: </label>
                     <input class="form-control" id="precio" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
-                    <div class="invalid-feedback">Ingrese un precio mayor a cero</div> 
+                    <div class="invalid-feedback">Ingrese un precio mayor a cero y menor a 1 millón</div> 
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->
