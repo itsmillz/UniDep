@@ -1,5 +1,27 @@
 <?php
         include("db_connection/connection.php");
+
+        // Escapamos y limipiamos los datos recibidos.
+        $desde = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['desde']))));
+        $hasta = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['hasta']))));
+        $banos = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['banos']))));
+        $habitaciones = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['habitaciones']))));
+        $amoblada = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['amoblada']))));
+        $tipo = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['tipo']))));
+        $gastoscomunesdesde = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['gastoscomunesdesde']))));
+        $gastoscomuneshasta = strip_tags(htmlspecialchars(trim(mysqli_real_escape_string($conn, $POST_['gastoscomuneshasta']))));
+
+        // Guardamos nuevamente los valores.
+        $POST_['desde'] = $desde;
+        $POST_['hasta'] = $hasta;
+        $POST_['banos'] = $banos;
+        $POST_['habitaciones'] = $habitaciones;
+        $POST_['amoblada'] = $amoblada;
+        $POST_['tipo'] = $tipo;
+        $POST_['gastoscomunesdesde'] = $gastoscomunesdesde;
+        $POST_['gastoscomuneshasta'] = $gastoscomuneshasta;
+
+        // Aplicamos los filtros según corresponda.
         if ($_POST['desde'] == '' && $_POST['hasta'] == '' && $_POST['banos'] == '' && $_POST['habitaciones'] == '' && $_POST['amoblada'] == '') {
             $sql = "";
         }else{

@@ -33,7 +33,8 @@
 					<form method="post" enctype="multipart/form-data" action="../form_propiedad/file-upload.php">
 					<label>Seleccione, si lo desea, las imágenes que necesite: </label>
 						<div class="w-100 d-flex">
-							<input type="file" name="image[]" accept="image/* "multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
+							<!-- <input type="file" name="image[]" accept="image/* "multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control"> -->
+							<input type="file" name="image[]" accept="image/*" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
 							<input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	
 						</div>
 					</form>

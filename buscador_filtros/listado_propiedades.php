@@ -1,6 +1,6 @@
 <?php
     if ((isset($_POST['desde']) != '' && isset($_POST['hasta']) != '' && isset($_POST['banos']) != '' && isset($_POST['habitaciones']) != '' && isset($_POST['amoblada']) != '' && $_POST['tipo'] != '' && isset($_POST['gastoscomunesdesde']) != '' && isset($_POST['gastoscomuneshasta']) != '') || isset($_POST['buscar']) != ''){
-        $all = "SELECT DISTINCT * FROM propiedad";
+        $all = "SELECT DISTINCT * FROM propiedad ORDER BY id_propiedad DESC";
         $all_list = $conn->query($all);
         while ($all_listt = $all_list->fetch_assoc()) {
         ?>
@@ -49,7 +49,7 @@
         }
     }
     if (isset($_POST['buscar']) == "" && $BAN == 1) {
-        $all = "SELECT DISTINCT * FROM propiedad";
+        $all = "SELECT DISTINCT * FROM propiedad ORDER BY id_propiedad DESC";
         $all_list = $conn->query($all);
         while ($all_listt = $all_list->fetch_assoc()) {
         ?>
