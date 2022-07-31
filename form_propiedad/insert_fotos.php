@@ -81,7 +81,7 @@
 					<?php
 						}else{ ?>
 					<br>
-					<p class="w-75 alert alert-danger mt-2 m-auto border-0">Estimado usuario: Por favor procure subir imágenes en los siguientes formatos: <strong>jpeg, jpg, png o webp,</strong> de lo contrario no se publicarán.</p>
+					<p class="w-75 alert alert-danger mt-2 m-auto border-0">Estimado usuario: Por favor, procure subir imágenes en los siguientes formatos: <strong>jpeg, jpg, png o webp,</strong> de lo contrario no se publicarán.</p>
 					<?php
 						} ?>
 					
