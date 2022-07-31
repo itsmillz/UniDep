@@ -16,7 +16,7 @@ $(document).ready(function () {
             data: "direccion=" + sanitizado,
             success: function (response) {
                 if(response.length > 10) {
-                    // la info q m pasa la bd la envia al JSON aquí
+                    // la info q m pasa la base de datos la envia al JSON aquí
                     let data = JSON.parse(response);
                     let data2 = e.target.value;
                     let sanitizar = data2.trim();

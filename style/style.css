@@ -513,7 +513,6 @@ hr {
 }
 
 table {
-    min-width: max-content;
     border-collapse: separate;
     border-spacing: 0px;    
 }

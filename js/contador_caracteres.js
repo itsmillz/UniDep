@@ -1,6 +1,6 @@
 var textArea = document.querySelector('textarea');
 var texto = document.getElementById("h2");
-texto.innerText="Carácteres especiales: ";
+texto.innerText="Carácteres restantes:";
 
 textArea.addEventListener('input', function(){
     let caracterMax = textArea.maxLength;

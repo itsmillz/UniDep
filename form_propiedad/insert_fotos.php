@@ -33,7 +33,7 @@
 					<form method="post" enctype="multipart/form-data" action="../form_propiedad/file-upload.php">
 					<label>Seleccione, si lo desea, las imágenes que necesite: </label>
 						<div class="w-100 d-flex">
-							<input type="file" name="image[]" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
+							<input type="file" name="image[]" accept="image/* "multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
 							<input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	
 						</div>
 					</form>
@@ -80,7 +80,7 @@
 					<?php
 						}else{ ?>
 					<br>
-					<p class="w-50 alert alert-danger mt-2 m-auto border-0">¡Oh, vaya!... parece que todavía no has subido ninguna imagen :(</p>
+					<p class="w-75 alert alert-danger mt-2 m-auto border-0">Estimado usuario: Por favor procure subir imágenes en los siguientes formatos: <strong>jpeg, jpg, png o webp,</strong> de lo contrario no se publicarán.</p>
 					<?php
 						} ?>
 					

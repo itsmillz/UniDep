@@ -16,6 +16,26 @@
         $sector = trim($sector);
         $precio = trim($precio);
         $tipo = trim($tipo);
+        $baño = trim($baño);
+        $habitacion = trim($habitacion);
+        $amoblado = trim($amoblado);
+        $superficie = trim($superficie);
+        $estacionamiento = trim($estacionamiento);
+        $servicio_aseo= trim($servicio_aseo);
+        $gastos_comunes = trim($gastos_comunes);
+        $descripcion = trim($descripcion);
+        //HTML
+        mysqli_real_escape_string($conn, $_POST["sector"]);
+        mysqli_real_escape_string($conn, $_POST["precio"]);
+        mysqli_real_escape_string($conn, $_POST["tipo"]);
+        mysqli_real_escape_string($conn, $_POST["baño"]);
+        mysqli_real_escape_string($conn, $_POST["habitacion"]);
+        mysqli_real_escape_string($conn, $_POST["amoblado"]);
+        mysqli_real_escape_string($conn, $_POST["superficie"]);
+        mysqli_real_escape_string($conn, $_POST["estacionamiento"]);
+        mysqli_real_escape_string($conn, $_POST["servicio_aseo"]);
+        mysqli_real_escape_string($conn, $_POST["gastos_comunes"]);
+        mysqli_real_escape_string($conn, $_POST["descripcion"]);
         //Evitar o eliminar HTML injection
         $sector = htmlspecialchars(strip_tags($sector));
         $precio = htmlspecialchars(strip_tags($precio));

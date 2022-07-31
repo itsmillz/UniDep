@@ -1,45 +1,52 @@
 <?php
 include '../db_connection/connection.php';
+
 if(isset($_POST['submit'])){
-	$extension=array('jpeg','jpg','png','gif', 'webp');
+	$extension=array('jpeg','jpg','png', 'webp');
 	$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
     if ($row = mysqli_fetch_row($rs)){
         $id = trim($row[0]);
 		// echo ("la id proveniente de la tabla imagen");
 		// echo $id;
-		echo '<script language="javascript">alert("Por favor, retroceda y suba las imágenes con los formatos siguientes: jpeg, jpg, png, gif o webp");</script>';
+		
 		// echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
-
-	}
-	foreach ($_FILES['image']['tmp_name'] as $key => $value) {
-		$filename=$_FILES['image']['name'][$key];
-		$filename_tmp=$_FILES['image']['tmp_name'][$key];
-		echo '<br>';
-		$ext=pathinfo($filename,PATHINFO_EXTENSION);
-		$finalimg='';
-		if(in_array($ext,$extension)){
-			if(!file_exists('images/'.$filename)){
-				move_uploaded_file($filename_tmp, 'images/'.$filename);
-				$finalimg=$filename;
-			} else {
-				$filename=str_replace('.','-',basename($filename,$ext));
-				$newfilename=$filename.time().".".$ext;
-				move_uploaded_file($filename_tmp, 'images/'.$newfilename);
-				$finalimg=$newfilename;
+		header("Location:".$_SERVER[HTTP_REFERER]."");
+		echo '<script language="javascript">alert("Por favor, retroceda y suba las imágenes con los formatos siguientes: jpeg, jpg, png, gif o webp");</script>';
+	}else{
+		
+		foreach ($_FILES['image']['tmp_name'] as $key => $value) {
+			$filename=$_FILES['image']['name'][$key];
+			$filename_tmp=$_FILES['image']['tmp_name'][$key];
+			echo '<br>';
+			$ext=pathinfo($filename,PATHINFO_EXTENSION);
+			$finalimg='';
+			if(in_array($ext,$extension)){
+				if(!file_exists('images/'.$filename)){
+					move_uploaded_file($filename_tmp, 'images/'.$filename);
+					$finalimg=$filename;
+				} else {
+					$filename=str_replace('.','-',basename($filename,$ext));
+					$newfilename=$filename.time().".".$ext;
+					move_uploaded_file($filename_tmp, 'images/'.$newfilename);
+					$finalimg=$newfilename;
+				}
+				$creattime=date('Y-m-d h:i:s');
+				//insert
+				$insertqry="insert into `multiple_images`(`image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
+				mysqli_query($conn,$insertqry);
+				header('Location: insert_fotos.php?id='.$id);
 			}
-			$creattime=date('Y-m-d h:i:s');
-			//insert
-			$insertqry="insert into `multiple_images`(`image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
-			mysqli_query($conn,$insertqry);
-			header('Location: insert_fotos.php?id='.$id);
 		}
 	}
+	
+	//recorremos con un for el array de las imágenes para despues subirlas a la base de datos
+	
 
 
 
 
 }
-print_r($_POST["submituniversidades"]);
+//print_r($_POST["submituniversidades"]);
 if(!empty($_POST["universidades"])){
 		
 	    /*
@@ -136,9 +143,6 @@ if(isset($_POST['ubb'])){
 	$conn->query($ubb);
 }
 */
-
-
-
 	header('Location:../index.php');
 }
 
