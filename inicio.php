@@ -78,11 +78,11 @@
                         </section>
                         <section class="filtro-general-input">
                             <label for="banos" class="titulo-filtro">Baños</label>
-                            <input type="number" name="banos" value="<?php echo $_POST["banos"]; ?>" placeholder="Cantidad de baños" min="0" max="8" pattern="[0-8]{1}">
+                            <input type="number" name="banos" value="<?php echo $_POST["banos"]; ?>" placeholder="Cantidad de baños" title="No puede contener mas de 100 baños.">
                         </section>
                         <section class="filtro-general-input">
                             <label for="habitaciones" class="titulo-filtro">Dormitorios</label>
-                            <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>" placeholder="Cantidad de dormitorios" min="0" max="8" pattern="[0-8]{1}">
+                            <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>" placeholder="Cantidad de dormitorios" min="0" max="99" pattern="[0-8]{1}">
                         </section>
                         <section class="filtro-select">
                             <label class="titulo-filtro">Amoblada</label>
@@ -131,11 +131,11 @@
                     </section>
                     <section class="filtro-general-input">
                         <label for="banos" class="titulo-filtro">Baños</label>
-                        <input type="number" name="banos" value="<?php echo $_POST["banos"]; ?>" placeholder="Cantidad de baños" min="0" max="8" pattern="[0-8]{1}">
+                        <input type="number" name="banos" value="<?php echo $_POST["banos"]; ?>" placeholder="Cantidad de baños" min="0" max="99" pattern="[0-9]{1}">
                     </section>
                     <section class="filtro-general-input">
                         <label for="habitaciones" class="titulo-filtro">Dormitorios</label>
-                        <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>" placeholder="Cantidad de dormitorios" min="0" max="8" pattern="[0-8]{1}">
+                        <input type="number" name="habitaciones" value="<?php echo $_POST["habitaciones"]; ?>" placeholder="Cantidad de dormitorios" min="0" max="99" pattern="[0-9]{1}">
                     </section>
                     <section class="filtro-select">
                         <label class="titulo-filtro">Amoblada</label>
