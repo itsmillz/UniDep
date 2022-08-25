@@ -8,6 +8,7 @@ Versiones de PHP y MYSQL utilizadas.
 ```bash
 PHP 8.1.9
 MySQL 8.0.28
+Apache/2.4.29 (Ubuntu)
 ```
 
 ## Instalación
