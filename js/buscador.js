@@ -4,7 +4,7 @@ function buscar_ahora(buscar) {
     $.ajax({
         data: parametros,
         type: 'POST',
-        url: 'buscador_filtros/buscador.php',
+        url: 'buscador_filtros_listado/buscador.php',
         success: function (data) {
             document.getElementById("datos_buscador").innerHTML = data;
         }

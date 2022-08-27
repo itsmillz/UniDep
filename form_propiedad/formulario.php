@@ -18,29 +18,33 @@
                 <a href="../index.php"><img src="../imagenes/UniDep.jpg" alt=""></a>
             </div>
         </header>
+        <div class="segundo-container">
+            <div class="contenedor-titulos">
+                <h1>Registra las características de tu propiedad</h1>
+            </div>
+        </div>
         <div class="contain">
             <?php if(!empty($statusMsg)){ ?>
                 <p class="status-msg"><?php echo $statusMsg; ?></p>
             <?php } ?>
-            <h1 class="h1">Registro de las características de su propiedad</h1>
             <form name="form-work" class="was-validated formulario" action="insert_propiedad.php" id="formulario" method="post" enctype="multipart/form-data">
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="sector">Dirección propiedad: </label>
-                    <input id= "direccion" class=" form-control" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
-                    <p id="mensaje"></p>
+                    <label class="titulo-filtro-individual" for="sector">Dirección propiedad: </label>
+                    <input id= "direccion" class="input-general" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
+                    <p id="mensaje" class="alertas-mensajes"></p>
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="precio">Precio propiedad: </label>
-                    <input class="form-control" id="precio" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
-                    <div class="invalid-feedback">Ingrese un precio mayor a cero y menor a 1 millón</div> 
+                    <label class="titulo-filtro-individual" for="precio">Precio propiedad: </label>
+                    <input class="input-general" id="precio" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
+                    <div class="invalid-feedback alertas-mensajes">Ingrese un precio mayor a cero y menor a 1 millón</div> 
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="propiedad">Tipo de alojamiento: </label>
-                    <select class="form-control" required name="tipo" id="select_tipo">
-                        <option value="">Seleccione el tipo de alojamiento/propiedad</option>
+                    <label class="titulo-filtro-individual" for="propiedad">Tipo de alojamiento: </label>
+                    <select class="input-general select" required name="tipo" id="select_tipo">
+                        <option value="" selected>Seleccione el tipo de alojamiento/propiedad</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Casa">Casa</option>
                     </select>
@@ -77,80 +81,74 @@
 
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="baño">Baños de su propiedad: </label>
-                    <input class="form-control" type="number" placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required min="0" max="99">
+                    <label class="titulo-filtro-individual" for="baño">Baños de su propiedad: </label>
+                    <input class="input-general" type="number" placeholder=" Ingrese cantidad de baño/s que posee su propiedad" name="baño" required min="0" max="99">
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="habitacion">Habitaciones de su propiedad: </label>
-                    <input class="form-control" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required min="0" max="99">
+                    <label class="titulo-filtro-individual" for="habitacion">Habitaciones de su propiedad: </label>
+                    <input class="input-general" type="number" placeholder=" Ingrese la cantidad de habitaciones que posee su propiedad" name="habitacion" required min="0" max="99">
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="superficie">Cantidad de superficie propiedad: </label>
-                    <input class="form-control" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required min="0" max="9999">
+                    <label class="titulo-filtro-individual" for="superficie">Cantidad de superficie propiedad: </label>
+                    <input class="input-general" type="number" placeholder=" Indique metros cuadrados aproximados" name="superficie" required min="0" max="9999">
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="amoblada">¿Propiedad amoblada?: </label>
+                    <label class="titulo-filtro-individual" for="amoblada">¿Propiedad amoblada?: </label>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio1" required="required" name="amoblado" value="Sí" > 
-                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio2" name="amoblado" value="No">
-                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio2">No</label>
                     </div>
             </br>
                 </div>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="superficie">¿Tiene estacionamiento?: </label>
+                    <label class="titulo-filtro-individual" for="superficie">¿Tiene estacionamiento?: </label>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio1" required="required" name="estacionamiento" value="Sí" >
-                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio2" name="estacionamiento" value="No">
-                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio2">No</label>
                     </div>
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="servicio_aseo">¿Tiene servicio de aseo?: </label>
+                    <label class="titulo-filtro-individual" for="servicio_aseo">¿Tiene servicio de aseo?: </label>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio1" required="required" name="servicio_aseo" value="Sí" >
-                        <label class="form-check-label" style="color:black;" for="radio1">Sí</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio1">Sí</label>
                     </div>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" id="radio2" name="servicio_aseo" value="No">
-                        <label class="form-check-label" style="color:black;" for="radio2">No</label>
+                        <label class="titulo-filtro-individual" style="color:black;" for="radio2">No</label>
                     </div>
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="gastos_comunes">Gastos comunes: </label>
-                    <input class="form-control" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required min="0" max="99999">
+                    <label class="titulo-filtro-individual" for="gastos_comunes">Gastos comunes: </label>
+                    <input class="input-general" type="number" placeholder="Ingrese precio de gastos comunes" name="gastos_comunes" required min="0" max="99999">
                 </div>
                 <br>
                 <div class="col-12 mb-2 mt-2">
-                    <label class="form-label" for="descripcion">Breve descripción del alojamiento: </label>
-                    <textarea maxlength="280" name="descripcion" class="form-control"  placeholder="Describa algunos detalles del alojamiento" required ></textarea>                       
+                    <label class="titulo-filtro-individual" for="descripcion">Breve descripción del alojamiento: </label>
+                    <textarea maxlength="280" name="descripcion" class="input-general textarea" placeholder="Describa algunos detalles del alojamiento" required ></textarea>                       
                     <br>
                     <div>
-                    <h2 id="h2" style="font-size: 1rem;"></h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:164px">280</h3>
+                    <h2 id="h2" class="alertas-mensajes"></h2><h3 class="alertas-mensajes" style="font-size: 1rem; margin-top:-27px; margin-left:164px">280</h3>
                 </div>
            <!-- aqui iban las unis -->
-
-
-
-
-
-
            <!-- hasta aqui -->
-                <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
+                <br><br><p class="alert alert-warning text-center titulo-filtro-individual">Revise que todos los datos sean correctos</p>
                 <div class="w-100 row">
-                    <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar" id="boton">
-                    <input class="btn btn w-75 m-auto" type="reset" value="Reiniciar el formulario">
+                    <input class="btn w-75 m-auto boton-principal-add" type="submit" name="submit" value="Continuar" id="boton">
+                    <input class="btn btn w-75 m-auto titulo-filtro-individual" type="reset" value="Reiniciar el formulario">
                 </div>
             </form>
         </div>
