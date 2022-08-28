@@ -397,7 +397,15 @@ hr {
     padding: 15px;
     border-radius: 7px;
   }
-  
+  /* .form2{ 
+    width: 25%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 7px;
+    margin-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  } */
   .carac {
   width: 100%;
   background: rgb(240, 240, 240);

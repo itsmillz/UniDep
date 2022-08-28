@@ -1,51 +1,74 @@
 <?php
-include '../db_connection/connection.php';
+include ("../db_connection/connection.php");
 
-if(isset($_POST['submit'])){
-	$extension=array('jpeg','jpg','png', 'webp');
-	$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
-    if ($row = mysqli_fetch_row($rs)){
-        $id = trim($row[0]);
-		// echo ("la id proveniente de la tabla imagen");
+	// echo "sidssdds";
+	
+    if(isset($_POST["submit"])){
+        $id = $_POST["id"];
 		// echo $id;
+        $check = getimagesize($_FILES["imagen"]["tmp_name"]);
+        if($check !== false){
+            $image = $_FILES['imagen']['tmp_name']; //[imagen] es el nombre que le pusimos en el name en HTML en el formulario, y [tmp_name] recuperamos el nombre que tiene la imagen
+            $imageContent =  addslashes(file_get_contents($image)); //extraerlo en bits
+			
+        }
+        $sql = "insert into multiple_images values (null, '$imageContent', $id)";
+		$conn->query($sql);
+		// echo $sql;      
+
+        header("Location: insert_fotos.php?id=$id");
 		
-		// echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
-		header("Location:".$_SERVER[HTTP_REFERER]."");
-		echo '<script language="javascript">alert("Por favor, retroceda y suba las imágenes con los formatos siguientes: jpeg, jpg, png, gif o webp");</script>';
-	}else{
+    }
+
+
+
+
+
+// if(isset($_POST['submit'])){
+// 	$extension=array('jpeg','jpg','png', 'webp');
+// 	$rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");
+//     if ($row = mysqli_fetch_row($rs)){
+//         $id = trim($row[0]);
+// 		// echo ("la id proveniente de la tabla imagen");
+// 		// echo $id;
 		
-		foreach ($_FILES['image']['tmp_name'] as $key => $value) {
-			$filename=$_FILES['image']['name'][$key];
-			$filename_tmp=$_FILES['image']['tmp_name'][$key];
-			echo '<br>';
-			$ext=pathinfo($filename,PATHINFO_EXTENSION);
-			$finalimg='';
-			if(in_array($ext,$extension)){
-				if(!file_exists('images/'.$filename)){
-					move_uploaded_file($filename_tmp, 'images/'.$filename);
-					$finalimg=$filename;
-				} else {
-					$filename=str_replace('.','-',basename($filename,$ext));
-					$newfilename=$filename.time().".".$ext;
-					move_uploaded_file($filename_tmp, 'images/'.$newfilename);
-					$finalimg=$newfilename;
-				}
-				$creattime=date('Y-m-d h:i:s');
-				//insert
-				$insertqry="insert into `multiple_images`(`image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
-				mysqli_query($conn,$insertqry);
-				header('Location: insert_fotos.php?id='.$id);
-			}
-		}
-	}
+// 		echo ("Por favor, retroceda y suba las imágenes con los formatos siguientes : jpeg, jpg, png, gif o webp");
+// 		header("Location:".$_SERVER[HTTP_REFERER]."");
+// 		echo '<script language="javascript">alert("Por favor, retroceda y suba las imágenes con los formatos siguientes: jpeg, jpg, png, gif o webp");</script>';
+// 	}
+		
+// 		foreach ($_FILES['image']['tmp_name'] as $key => $value) {
+// 			$filename=$_FILES['image']['name'][$key];
+// 			$filename_tmp=$_FILES['image']['tmp_name'][$key];
+// 			echo '<br>';
+// 			$ext=pathinfo($filename,PATHINFO_EXTENSION);
+// 			$finalimg='';
+// 			if(in_array($ext,$extension)){
+// 				if(!file_exists('images/'.$filename)){
+// 					move_uploaded_file($filename_tmp, 'images/'.$filename);
+// 					$finalimg=$filename;
+// 				} else {
+// 					$filename=str_replace('.','-',basename($filename,$ext));
+// 					$newfilename=$filename.time().".".$ext;
+// 					move_uploaded_file($filename_tmp, 'images/'.$newfilename);
+// 					$finalimg=$newfilename;
+// 				}
+// 				$creattime=date('Y-m-d h:i:s');
+// 				//insert
+// 				$insertqry="insert into `multiple_images`(`image_name`, `image_createtime`,`id_propiedad`) values ('$finalimg','$creattime','$id')";
+// 				mysqli_query($conn,$insertqry);
+// 				header('Location: insert_fotos.php?id='.$id);
+// 			}
+// 		}
 	
-	//recorremos con un for el array de las imágenes para despues subirlas a la base de datos
+	
+// 	//recorremos con un for el array de las imágenes para despues subirlas a la base de datos
 	
 
 
 
 
-}
+// }
 //print_r($_POST["submituniversidades"]);
 if(!empty($_POST["universidades"])){
 		

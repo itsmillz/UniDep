@@ -1,6 +1,5 @@
 $(document).ready(()=>{
     $("#boton").prop("disabled",true);
-  
     $("#form").change(()=>{
         let checkboxs = document.querySelectorAll('input[type="checkbox"]');
         let checkeds = [];

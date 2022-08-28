@@ -37,7 +37,7 @@
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->
-                <div class="col-12 mb-2 mt-2">
+                <div class= "col-12 mb-2 mt-2">
                     <label class="form-label" for="propiedad">Tipo de alojamiento: </label>
                     <select class="form-control" required name="tipo" id="select_tipo">
                         <option value="">Seleccione el tipo de alojamiento/propiedad</option>
@@ -139,14 +139,6 @@
                     <div>
                     <h2 id="h2" style="font-size: 1rem;"></h2><h3 style="font-size: 1rem; margin-top:-27px; margin-left:164px">280</h3>
                 </div>
-           <!-- aqui iban las unis -->
-
-
-
-
-
-
-           <!-- hasta aqui -->
                 <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
                 <div class="w-100 row">
                     <input class="btn btn-success w-75 m-auto" type="submit" name="submit" value="Continuar" id="boton">

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Subir Fotos Propiedad</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -30,15 +29,17 @@
 				<div class="margin-top:">
 
 					<h4 class="fotos_indexform">Seleccione las fotos de su propiedad: </h4>
-					<form method="post" enctype="multipart/form-data" action="../form_propiedad/file-upload.php">
+					<form method="POST" enctype="multipart/form-data" action="file-upload.php">
 					<label>Seleccione, si lo desea, las imágenes que necesite: </label>
-						<div class="w-100 d-flex">
-							<!-- <input type="file" name="image[]" accept="image/* "multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control"> -->
-							<input type="file" name="image[]" accept="image/*" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control">
-							<input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	
+						<div class="w-100 d-flex"> 
+							<input type= "file" name="imagen" id="validacion_imagenes" style= "padding: 0.375rem 0.75rem;" required="" class= "form-control">
+							<input type= "hidden" name= "id" value =<?php echo $id;?>>
+							<input type= "submit" name= "submit" id= "boton_upload" value= "Subir Fotos" style= "border:2px; background-color: #3F9D25" class= "border boton_fotos btn btn-light text-white">
+							<!-- <input type="file" name="image[]" accept="image/*" multiple="" style="padding: 0.375rem 0.75rem;" required="" class="form-control"> -->
+							<!-- <input type="submit" name="submit" value="Subir Fotos" style="border:2px; background-color: #3F9D25" class="border boton_fotos btn btn-light text-white">	 -->
 						</div>
 					</form>
-
+					<div id="prompt"></div>
 
 
 					<?php
@@ -64,7 +65,7 @@
 							while($imagen = $resultado -> fetch_row()){ ?>
 							<tr>
 								<td class="list_image">
-									<?php echo '<img src="images/'.$imagen[1]. '" width="200px" alt=""> ' ?>
+								<td class=""><?php echo '<img width=400px height=300px src="data:image/jpg;base64,'.base64_encode($imagen[1] ).'"/>';  ?></td>
 								</td>
 								<td class="list_button">
 									<?php echo "<a class='btn btn-danger' href='crud/delete.php?id=".$imagen[0]."&id_propiedad=".$id."'>Eliminar</a>"; ?>
@@ -74,14 +75,13 @@
 							}?>
 						</tbody>
 					</table>
-					<!-- </div> -->
 					</div>
 					</div>
 
 					<?php
 						}else{ ?>
 					<br>
-					<p class="w-75 alert alert-danger mt-2 m-auto border-0">Estimado usuario: Por favor, procure subir imágenes en los siguientes formatos: <strong>jpeg, jpg, png o webp,</strong> de lo contrario no se publicarán.</p>
+					<!-- <p id = "vent" class="w-75 alert alert-danger mt-2 m-auto border-0">Estimado usuario: Por favor, procure subir imágenes en los siguientes formatos: <strong>jpeg, jpg, png o webp,</strong> de lo contrario no se publicarán.</p> -->
 					<?php
 						} ?>
 					
@@ -113,47 +113,6 @@
 							<input id="boton" style="cursor:pointer" class="color_boton w3-panel w-75 m-auto text-black pt-1 pb-1 rounded" type="submit"
 							name="submituniversidades" value="Enviar Publicación" style="margin: auto">
 						</div>
-						
-						<!-- <input type="checkbox" id="ucsc" name="ucsc" value="ucsc">
-						<label>Universidad Católica de la Santísima Concepción</label><br>
-
-						<input type="checkbox" id="uss" name="uss" value="uss">
-						<label>Universidad San Sebastián</label><br>
-
-						<input type="checkbox" id="udp" name="udp" value="udp">
-						<label>Universidad Diego Portales</label><br>
-
-						<input type="checkbox" id="upacifico" name="upacifico" value="upacifico">
-						<label>Universidad del Pacífico</label><br>
-
-						<input type="checkbox" id="utfsm" name="utfsm" value="utfsm">
-						<label>Universidad Técnica Federico Santa María</label><br>
-
-						<input type="checkbox" id="inacap" name="inacap" value="inacap">
-						<label>INACAP - Universidad Tecnológica de Chile</label><br>
-
-						<input type="checkbox" id="unab" name="unab" value="unab">
-						<label>Universidad Andrés Bello</label><br>
-
-						<input type="checkbox" id="ust" name="ust" value="ust">
-						<label>Universidad Santo Tomás</label><br>
-
-						<input type="checkbox" id="duocan" name="duocan" value="duocan">
-						<label>Duoc UC: Sede San Andrés De Concepción</label><br>
-
-						<input type="checkbox" id="duoc" name="duoc" value="duoc">
-						<label>Instituto Profesional DUOC UC</label><br>
-
-						<input type="checkbox" id="udd" name="udd" value="udd">
-						<label>Universidad del Desarrollo</label><br>
-
-						<input type="checkbox" id="udec" name="udec" value="udec">
-						<label>Universidad de Concepción</label><br>
-
-						<input type="checkbox" id="ubb" name="ubb" value="ubb">
-						<label>Universidad del Bío-Bío</label><br>
-						<br>
-						-->
 					</form> 
 				</div>
 			</div>
@@ -171,4 +130,5 @@
 		crossorigin="anonymous"></script>
 </body>
 <script src="../js/validar_checkbox.js"></script>
+<script src="../js/validacion_imagenes.js"></script>
 </html>

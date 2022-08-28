@@ -12,16 +12,23 @@ $(document).ready(function () {
         $.ajax({
             url: "validar_direccion.php",
             type: "POST",
-            async: true,
+            async: true, 
             data: "direccion=" + sanitizado,
             success: function (response) {
                 if(response.length > 10) {
                     // la info q m pasa la base de datos la envia al JSON aquí
-                    let data = JSON.parse(response);
-                    let data2 = e.target.value;
-                    let sanitizar = data2.trim();
-                    let sector = data.sector;
-                    if (sector.includes(sanitizar)) {
+                    let data = JSON.parse(response); //Viene desde la base de datos, JSON(parse) transforma a JSON para extraer informacion
+                    // console.log(data);
+                    let data2 = e.target.value;//captura x teclado al momento de escribir la direccion
+                    let sanitizar = data2.trim();//lo mandas por teclado, con trim elimino espacios
+
+                    let data2_mayuscula = sanitizar.toUpperCase();//lo q viene del teclado se pasa a MAYUS
+
+                    // console.log("Teclado = "+data2_mayuscula);
+                    let sector = data.sector; //extraigo la data de mi response JSON a la variable sector para manejarlo con string facilmente
+                    let data_mayuscula = sector.toUpperCase();//lo q viene de la BD lo paso a MAYUS
+                    // console.log("BD = "+data_mayuscula) 
+                    if (data_mayuscula.includes(data2_mayuscula)) {//pregunto si lo q mando x teclado coincide por lo q mando desde la base de datos
                         console.log("Esta dirección ya está registrada");
                         console.log(response);
                         $("#mensaje").show();
