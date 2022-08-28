@@ -1054,48 +1054,102 @@
         }
 ?>
 <?php if ($sql != "") { $BAN = 0;?>
-    <?php while($rowSql = $sql_final->fetch_assoc()) { ?>
-                <div class="contenedor-arriendo">
-                    <div class="imagen-arriendo">
+    <?php while($all_listt = $sql_final->fetch_assoc()) { ?>
+        <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo">
+                <div class="imagen-arriendo">
                         <img src="imagenes/depto.png" alt="">
-                    </div>
-                    <div class="contenido-arriendo">
+                </div>
+                <div class="contenido-arriendo">
+                        <!-- Información principal: universidades, dirección, descripción -->
                         <div class="contenido-principal">
-                            <div class="universidad-calificacion">
-                                <?php
-                                    // Extraemos todas las universidades vinculadas a esa propiedad en especifico.
-                                    $sql_universidad = "SELECT DISTINCT nombre_universidad FROM tiene_2 INNER JOIN universidad ON universidad.id_universidad=tiene_2.id_universidad WHERE tiene_2.id_propiedad = ".$rowSql['id_propiedad']."";
-                                    $res = $conn->query($sql_universidad);
-                                    echo "<div class='listado_universidad'>";
-                                    while($uni = $res->fetch_assoc()){
-                                        echo "<p> ".$uni['nombre_universidad']." </p>";
-                                    }
-                                    echo "</div>";
-                                ?>
-                                <div class="calificacion">
-                                                <img src="imagenes/estrella.png" alt="">
-                                                <p><strong>4.6</strong></p>
+                            <div class="universidades">
+                                <ul>
+                                    <?php
+                                        // Extraemos todas las universidades vinculadas a esa propiedad en especifico.
+                                        $sql_universidad = "SELECT DISTINCT nombre_universidad FROM tiene_2 INNER JOIN universidad ON universidad.id_universidad=tiene_2.id_universidad WHERE tiene_2.id_propiedad = ".$all_listt['id_propiedad']."";
+                                        $res = $conn->query($sql_universidad);
+                                        while($uni = $res->fetch_assoc()){
+                                            echo "<li class='listado_universidad'>";
+                                                echo "<img class='svg-caracteristicas' src='imagenes/caracteristicas/school-outline.svg'></img>";
+                                                echo "<p> ".$uni['nombre_universidad']." </p>";
+                                            echo "</li>";
+                                        }
+                                    ?>
+                                </ul>
+                            </div>
+                            <h2 class="direccion-titulo"><?php echo $all_listt['sector'] ?></h2>
+                            <div class="contenedor-descripcion">
+                                <p><?php echo $all_listt['descripcion'] ?></p>
+                            </div>
+                        </div>
+                        <!-- Información secundaria: precio, caracteristicas -->
+                        <div class="contenido-secundario">
+                            <hr class="separador-primario-secundario">
+                            <div class="contenedor-caracteristica">
+                                <h2>$<?php echo $all_listt['precio'] ?> CLP</h2>
+                                <div class="contenido-caracteristica">
+                                    <section class="caracteristica">
+                                        <img src="imagenes/caracteristicas/bano.png" alt="">
+                                        <p><?php echo $all_listt['bano'] ?> baños</p>
+                                    </section>
+                                    <section class="caracteristica">
+                                        <img src="imagenes/caracteristicas/bed-outline.svg" alt="">
+                                        <p><?php echo $all_listt['habitacion'] ?> habitaciones</p>
+                                    </section>
+                                    <section class="caracteristica">
+                                        <img src="imagenes/caracteristicas/zona.png" alt="">
+                                        <p><?php echo $all_listt['superficie'] ?> m<sup>2</sup></p>
+                                    </section>
                                 </div>
                             </div>
-                            <h2><?php echo $rowSql['sector'] ?></h2>
-                            <p class="descripcion-arriendo"><?php echo $rowSql['descripcion'] ?></p>
                         </div>
-                        <hr>
+                </div>
+        </a>
+        <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo-movil">
+                <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('imagenes/depto.png');background-size:cover;background-position: center;">
+                    <!-- Información principal: universidades, dirección, descripción -->
+                    <div class="contenido-principal">
+                            <div class="universidades">
+                                <ul>
+                                    <?php
+                                        // Extraemos todas las universidades vinculadas a esa propiedad en especifico.
+                                        $sql_universidad = "SELECT DISTINCT nombre_universidad FROM tiene_2 INNER JOIN universidad ON universidad.id_universidad=tiene_2.id_universidad WHERE tiene_2.id_propiedad = ".$all_listt['id_propiedad']."";
+                                        $res = $conn->query($sql_universidad);
+                                        while($uni = $res->fetch_assoc()){
+                                            echo "<li class='listado_universidad'>";
+                                                echo "<img class='svg-caracteristicas' src='imagenes/caracteristicas/school-outline.svg'></img>";
+                                                echo "<p> ".$uni['nombre_universidad']." </p>";
+                                            echo "</li>";
+                                        }
+                                    ?>
+                                </ul>
+                            </div>
+                            <h2 class="direccion-titulo"><?php echo $all_listt['sector'] ?></h2>
+                            <div class="contenedor-descripcion">
+                                <p><?php echo $all_listt['descripcion'] ?></p>
+                            </div>
+                    </div>
+                    <div class="contenido-arriendo">
+                        <!-- Información secundaria: precio, caracteristicas -->
                         <div class="contenido-secundario">
-                            <p class="precio-arriendo">$<?php echo number_format($rowSql['precio'],0,",","."); ?> CLP</p>
-                            <div class="caracteristicas-arriendo">
-                                <div class="caracteristica-arriendo">
-                                    <img style="margin-right: 6px;" src="imagenes/cama.png" alt="">
-                                    <p><?php echo $rowSql['habitacion'] ?> dorm</p>
-                                </div>
-                                <div class="caracteristica-arriendo">
-                                    <img src="imagenes/bano.png" alt="">
-                                    <p><?php echo $rowSql['bano'] ?> baños</p>
+                            <hr class="separador-primario-secundario">
+                            <div class="contenedor-caracteristica">
+                                <h2>$<?php echo $all_listt['precio'] ?> CLP</h2>
+                                <div class="contenido-caracteristica">
+                                    <section class="caracteristica">
+                                        <img src="imagenes/caracteristicas/bano.png" alt="">
+                                        <p><?php echo $all_listt['bano'] ?> baños</p>
+                                    </section>
+                                    <section class="caracteristica">
+                                        <img src="imagenes/caracteristicas/bed-outline.svg" alt="">
+                                        <p><?php echo $all_listt['habitacion'] ?> habitaciones</p>
+                                    </section>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+        </a>
     <?php } 
 }
 ?>
