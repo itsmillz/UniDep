@@ -67,7 +67,7 @@
                                 <div class="info-card">
                                     <section class="card-info">
                                         <img src="../imagenes/caracteristicas/telefono.svg" alt="">
-                                        <p>9 5434 5455</p>
+                                        <p><?php echo $fila['telefono'] ?></p>
                                     </section>
                                 </div>
                             </div>
