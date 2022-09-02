@@ -1,4 +1,3 @@
-
 // esto ejecuta el js cuando el html este cargado completamente (ready)
 $(document).ready(function () {
 
@@ -20,10 +19,9 @@ $(document).ready(function () {
                     let data = JSON.parse(response); //Viene desde la base de datos, JSON(parse) transforma a JSON para extraer informacion
                     // console.log(data);
                     let data2 = e.target.value;//captura x teclado al momento de escribir la direccion
+                    data2 = data2.replace(/[&\/\\,+()$~%.'":*?<>{}]/g, '');
                     let sanitizar = data2.trim();//lo mandas por teclado, con trim elimino espacios
-
                     let data2_mayuscula = sanitizar.toUpperCase();//lo q viene del teclado se pasa a MAYUS
-
                     // console.log("Teclado = "+data2_mayuscula);
                     let sector = data.sector; //extraigo la data de mi response JSON a la variable sector para manejarlo con string facilmente
                     let data_mayuscula = sector.toUpperCase();//lo q viene de la BD lo paso a MAYUS

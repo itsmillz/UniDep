@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    $usuario = $_SESSION['usuario'];
+	if (!$usuario) {
+		header("Location: ../index.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +31,20 @@
             </div>
         </div>
         <div class="contain">
+            <!-- Boton de volver hacía atras -->
             <?php if(!empty($statusMsg)){ ?>
                 <p class="status-msg"><?php echo $statusMsg; ?></p>
             <?php } ?>
             <form name="form-work" class="was-validated formulario" action="insert_propiedad.php" id="formulario" method="post" enctype="multipart/form-data">
+                <div class="cont-volver">
+                    <div class="volver-inicio-atras" style="width: 100%">
+                        <a class="volver-atras" style="text-decoration: none; margin-right: 8px;" href="../index.php" style="margin-right: 8px;">&#171; incio</a>
+                        <a class="volver-atras" style="text-decoration: none;" href="<?=$_SERVER["HTTP_REFERER"]?>">&#171; volver atras</a>
+                    </div>
+                </div>
                 <div class="col-12 mb-2 mt-2">
                     <label class="titulo-filtro-individual" for="sector">Dirección propiedad: </label>
-                    <input id= "direccion" class="input-general" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
+                    <input id="direccion" class="input-general" type="text" placeholder="Ingrese sector de su propiedad" name="sector" required autocomplete="off">
                     <p id="mensaje" class="alertas-mensajes"></p>
                 </div>
                 <br>
@@ -41,17 +55,10 @@
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->
-<<<<<<< HEAD
-                <div class= "col-12 mb-2 mt-2">
-                    <label class="form-label" for="propiedad">Tipo de alojamiento: </label>
-                    <select class="form-control" required name="tipo" id="select_tipo">
-                        <option value="">Seleccione el tipo de alojamiento/propiedad</option>
-=======
                 <div class="col-12 mb-2 mt-2">
                     <label class="titulo-filtro-individual" for="propiedad">Tipo de alojamiento: </label>
                     <select class="input-general select" required name="tipo" id="select_tipo">
                         <option value="" selected>Seleccione el tipo de alojamiento/propiedad</option>
->>>>>>> 63ea54c4148f274607a7b678190693ed14373b0d
                         <option value="Departamento">Departamento</option>
                         <option value="Casa">Casa</option>
                     </select>
@@ -150,13 +157,9 @@
                     <div>
                     <h2 id="h2" class="alertas-mensajes"></h2><h3 class="alertas-mensajes" style="font-size: 1rem; margin-top:-27px; margin-left:164px">280</h3>
                 </div>
-<<<<<<< HEAD
-                <br><br><p class="alert alert-warning text-center ">Revise que todos los datos sean correctos</p>
-=======
            <!-- aqui iban las unis -->
            <!-- hasta aqui -->
                 <br><br><p class="alert alert-warning text-center titulo-filtro-individual">Revise que todos los datos sean correctos</p>
->>>>>>> 63ea54c4148f274607a7b678190693ed14373b0d
                 <div class="w-100 row">
                     <input class="btn w-75 m-auto boton-principal-add" type="submit" name="submit" value="Continuar" id="boton">
                     <input class="btn btn w-75 m-auto titulo-filtro-individual" type="reset" value="Reiniciar el formulario">

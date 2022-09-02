@@ -1,12 +1,19 @@
 <?php
     if ((isset($_POST['desde']) != '' && isset($_POST['hasta']) != '' && isset($_POST['banos']) != '' && isset($_POST['habitaciones']) != '' && isset($_POST['amoblada']) != '' && $_POST['tipo'] != '' && isset($_POST['gastoscomunesdesde']) != '' && isset($_POST['gastoscomuneshasta']) != '') || isset($_POST['buscar']) != ''){
-        $all = "SELECT DISTINCT * FROM propiedad ORDER BY id_propiedad DESC";
+        $all = "SELECT DISTINCT * FROM propiedad WHERE estado = '0' ORDER BY id_propiedad DESC";
         $all_list = $conn->query($all);
         while ($all_listt = $all_list->fetch_assoc()) {
         ?>
             <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo">
                 <div class="imagen-arriendo">
-                        <img src="imagenes/depto.png" alt="">
+                    <?php 
+                        $consulta = 'SELECT * FROM multiple_images WHERE id_propiedad ='.$all_listt['id_propiedad'];
+                        $resultado = $conn->query($consulta);
+                            while($uni = $resultado->fetch_assoc()){
+                            echo '<img width="400px" height="auto" src="data:image/jpg;base64,'.base64_encode($uni['imagen']).'"/>';
+                            break;
+                        } 
+                    ?>
                 </div>
                 <div class="contenido-arriendo">
                         <!-- Información principal: universidades, dirección, descripción -->
@@ -55,7 +62,7 @@
                 </div>
             </a>
             <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo-movil">
-                <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('imagenes/depto.png');background-size:cover;background-position: center;">
+                <div style="background-color: #fff;">
                     <!-- Información principal: universidades, dirección, descripción -->
                     <div class="contenido-principal">
                             <div class="universidades">
@@ -83,7 +90,7 @@
                         <div class="contenido-secundario">
                             <hr class="separador-primario-secundario">
                             <div class="contenedor-caracteristica">
-                                <h2>$<?php echo $all_listt['precio'] ?> CLP</h2>
+                                <h2>$<?php echo number_format($all_listt['precio'], 0, ".", ".") ?> CLP</h2>
                                 <div class="contenido-caracteristica">
                                     <section class="caracteristica">
                                         <img src="imagenes/caracteristicas/bano.png" alt="">
@@ -103,13 +110,20 @@
         }
     }
     if (isset($_POST['buscar']) == "" && $BAN == 1) {
-        $all = "SELECT DISTINCT * FROM propiedad ORDER BY id_propiedad DESC";
+        $all = "SELECT DISTINCT * FROM propiedad WHERE estado = '0' ORDER BY id_propiedad DESC";
         $all_list = $conn->query($all);
         while ($all_listt = $all_list->fetch_assoc()) {
         ?>
             <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo">
                 <div class="imagen-arriendo">
-                        <img src="imagenes/depto.png" alt="">
+                    <?php 
+                        $consulta = 'SELECT * FROM multiple_images WHERE id_propiedad ='.$all_listt['id_propiedad'];
+                        $resultado = $conn->query($consulta);
+                            while($uni = $resultado->fetch_assoc()){
+                            echo '<img width="400px" height="auto" src="data:image/jpg;base64,'.base64_encode($uni['imagen']).'"/>';
+                            break;
+                        } 
+                    ?>
                 </div>
                 <div class="contenido-arriendo">
                         <!-- Información principal: universidades, dirección, descripción -->
@@ -138,7 +152,7 @@
                         <div class="contenido-secundario">
                             <hr class="separador-primario-secundario">
                             <div class="contenedor-caracteristica">
-                                <h2>$<?php echo $all_listt['precio'] ?> CLP</h2>
+                                <h2>$<?php echo number_format($all_listt['precio'], 0, ".", ".") ?> CLP</h2>
                                 <div class="contenido-caracteristica">
                                     <section class="caracteristica">
                                         <img src="imagenes/caracteristicas/bano.png" alt="">
@@ -158,7 +172,7 @@
                 </div>
             </a>
             <a href="<?php echo 'buscador_filtros_listado/detalles_propiedad.php?id='.$all_listt['id_propiedad'].'' ?>" class="contenedor-arriendo-movil">
-                <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('imagenes/depto.png');background-size:cover;background-position: center;">
+                <div style="background-color: #fff;">
                     <!-- Información principal: universidades, dirección, descripción -->
                     <div class="contenido-principal">
                             <div class="universidades">
@@ -186,7 +200,7 @@
                         <div class="contenido-secundario">
                             <hr class="separador-primario-secundario">
                             <div class="contenedor-caracteristica">
-                                <h2>$<?php echo $all_listt['precio'] ?> CLP</h2>
+                                <h2>$<?php echo number_format($all_listt['precio'], 0, ".", ".") ?> CLP</h2>
                                 <div class="contenido-caracteristica">
                                     <section class="caracteristica">
                                         <img src="imagenes/caracteristicas/bano.png" alt="">

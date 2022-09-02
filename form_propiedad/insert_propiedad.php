@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    $usuario = $_SESSION['usuario'];
+	if (!$usuario) {
+		header("Location: ../index.php");
+	}
+?>
 <?php
     include '../db_connection/connection.php';
     if(isset($_POST['submit'])){
@@ -48,7 +55,7 @@
         $servicio_aseo = htmlspecialchars(strip_tags($servicio_aseo));
         $gastos_comunes = htmlspecialchars(strip_tags($gastos_comunes));
         $descripcion = htmlspecialchars(strip_tags($descripcion));
-        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion')";
+        $sql_propiedad = "insert into propiedad values (null, '$sector', '$precio', '$tipo', '$baño', '$habitacion', '$amoblado', '$superficie', '$estacionamiento', '$servicio_aseo', '$gastos_comunes', '$descripcion', '$usuario', '0')";
         $conn->query($sql_propiedad);
         $id = '';
         $rs = mysqli_query($conn, "select max(id_propiedad) from propiedad");

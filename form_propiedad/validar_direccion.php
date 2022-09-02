@@ -5,7 +5,7 @@
         $direc = trim($direc); //limpiar variable inicio y final del string
         $direc = htmlspecialchars($direc); //quita el efecto al ingresar un injection html
         $direc = strip_tags($direc); //elimina la etiqueta HTML
-        $query = "select * from propiedad where sector = '$direc' ";
+        $query = "select * from propiedad where sector like '%$direc%' ";
         $resultado = mysqli_query($conn, $query);
         mysqli_close($conn);
         $filas = mysqli_num_rows($resultado);

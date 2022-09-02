@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','','imageupload');
+$conn=mysqli_connect('localhost','root','','unidep');
 
 if(mysqli_connect_errno())
 {
