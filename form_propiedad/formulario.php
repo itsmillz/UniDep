@@ -39,7 +39,7 @@
                 <div class="cont-volver">
                     <div class="volver-inicio-atras" style="width: 100%">
                         <a class="volver-atras" style="text-decoration: none; margin-right: 8px;" href="../index.php" style="margin-right: 8px;">&#171; incio</a>
-                        <a class="volver-atras" style="text-decoration: none;" href="<?=$_SERVER["HTTP_REFERER"]?>">&#171; volver atras</a>
+                        <a class="volver-atras" style="text-decoration: none;" href="<?=$_SERVER["HTTP_REFERER"]?>"> &#171; volver atras</a>
                     </div>
                 </div>
                 <div class="col-12 mb-2 mt-2">
@@ -52,6 +52,12 @@
                     <label class="titulo-filtro-individual" for="precio">Precio propiedad: </label>
                     <input class="input-general" id="precio" type="number" placeholder="Ingrese el precio de arriendo" name="precio" min="0" max="999999" required>
                     <div class="invalid-feedback alertas-mensajes">Ingrese un precio mayor a cero y menor a 1 millón</div> 
+                </div>
+                <br>
+                <div class="col-12 mb-2 mt-2">
+                    <label class="titulo-filtro-individual" for="telefono">Telefono: </label>
+                    <input class="input-general" id="telefono" type="number" placeholder="Ingrese su telefono" name="telefono" min="100000000" max="99999999999" required>
+                    <div class="invalid-feedback alertas-mensajes">Ingrese un telefono valido</div> 
                 </div>
                 <br>
                 <!-- opciones multiples para elegir tipo de alojamiento -->

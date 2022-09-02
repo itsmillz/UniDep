@@ -1,6 +1,9 @@
 <?php 
     session_start();
-    $usuario = $_SESSION['usuario'];
+    $usuario = "";
+    if (isset($_SESSION['usuario'])) {
+        $usuario = $_SESSION['usuario'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">

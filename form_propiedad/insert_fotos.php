@@ -1,10 +1,13 @@
 <?php 
-    session_start();
-    $usuario = $_SESSION['usuario'];
-	if (!$usuario) {
+	session_start();
+    $usuario = "";
+    if (isset($_SESSION['usuario'])) {
+        $usuario = $_SESSION['usuario'];
+    }else{
 		header("Location: ../index.php");
 	}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,4 +140,5 @@
 		crossorigin="anonymous"></script>
 </body>
 <script src="../js/validar_checkbox.js"></script>
+<script src="../js/validacion_imagenes.js"></script>
 </html>

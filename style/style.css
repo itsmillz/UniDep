@@ -326,6 +326,44 @@ body {
   min-width: 350px;
   margin-right: 50px;
 }
+.cont-filter{
+  display: flex;
+  justify-content: space-between;
+}
+.cont-borrar{
+  position: relative;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.cont-borrar svg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  align-self: center;
+  z-index: 1;
+}
+.cont-borrar input{
+  position: absolute;
+  border: none;
+  background-color: #ffffff00;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+}
+.cont-borrar input:hover{
+  cursor: pointer;
+}
+
 .titulo-filtro{
   font-family: var(--titulo-subtitulo);
   font-size: var(--subtitulos-primarios-tamano);
@@ -418,6 +456,9 @@ body {
   border-top-left-radius:  15px;
   border-bottom-left-radius:  15px;
   filter: brightness(85%);
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
 }
 /* Contenedor Secundario */
 .contenido-arriendo{
