@@ -70,7 +70,7 @@
                 ?>
                 <div class="detalles-principal">
                     <div class="volver-inicio-atras">
-                        <a class="volver-atras" href="../index.php" style="margin-right: 8px;">&#171; incio</a>
+                        <a class="volver-atras" href="../index.php" style="margin-right: 8px;">&#171; Inicio</a>
                         <a class="volver-atras" href="<?=$_SERVER["HTTP_REFERER"]?>">&#171; volver atrás</a>
                     </div>
                     <p class='cantidad-total' style="margin-left:20px;">Cantidad de arriendos <?php echo $total ?></p>
