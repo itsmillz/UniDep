@@ -63,7 +63,6 @@ a:active, a:link, a:visited {
 }
 html{
   overflow-x: hidden;
-  height: 100vh;
 }
 body {
   margin: 0px;
