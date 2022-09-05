@@ -28,7 +28,7 @@
         <main class="main-detail">
             <!-- Boton de volver hacía atras -->
             <div class="volver-inicio-atras" style="width: 100%">
-                <a class="volver-atras" href="../index.php" style="margin-right: 8px;">&#171; incio</a>
+                <a class="volver-atras" href="../index.php" style="margin-right: 8px;">&#171; Inicio</a>
                 <a class="volver-atras" href="<?=$_SERVER["HTTP_REFERER"]?>">&#171; volver atrás</a>
             </div>
 
