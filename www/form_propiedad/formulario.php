@@ -38,8 +38,8 @@
             <form name="form-work" class="was-validated formulario" action="insert_propiedad.php" id="formulario" method="post" enctype="multipart/form-data">
                 <div class="cont-volver">
                     <div class="volver-inicio-atras" style="width: 100%">
-                        <a class="volver-atras" style="text-decoration: none; margin-right: 8px;" href="../index.php" style="margin-right: 8px;">&#171; incio</a>
-                        <a class="volver-atras" style="text-decoration: none;" href="<?=$_SERVER["HTTP_REFERER"]?>"> &#171; volver atras</a>
+                        <a class="volver-atras" style="text-decoration: none; margin-right: 8px;" href="../index.php" style="margin-right: 8px;">&#171; Inicio</a>
+                        <a class="volver-atras" style="text-decoration: none;" href="<?=$_SERVER["HTTP_REFERER"]?>"> &#171; volver atrás</a>
                     </div>
                 </div>
                 <div class="col-12 mb-2 mt-2">
