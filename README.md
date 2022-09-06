@@ -24,11 +24,11 @@ Luego verificamos que este corriendo todo correctamente ejecutando el siguiente 
 ````
 docker-compose ps
 ````
-Esto nos mostrara que tres contenedores, el primero corriendo el [puerto 8000](localhost:8000) (phpmyadmin), el segundo en el [puerto 80](localhost:80) (www) y el tercero en 3306 (base de datos).
+Esto nos mostrara que tres contenedores, el primero corriendo el [puerto 8000](https://localhost:8000) (phpmyadmin), el segundo en el [puerto 80](https://localhost:80) (www) y el tercero en 3306 (base de datos).
 
 ## Base de datos
 
-Para la conexión a la base de datos debemos hacer lo siguiente, en la carpeta **dump/** se encuenta la base de datos **unidep.sql** la cual debemos importar en el ruta del [puerto 8000](localhost:8000)
+Para la conexión a la base de datos debemos hacer lo siguiente, en la carpeta **dump/** se encuenta la base de datos **unidep.sql** la cual debemos importar en el ruta del [puerto 8000](https://localhost:8000)
 
 
 ## Credenciales
