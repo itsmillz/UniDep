@@ -44,7 +44,7 @@ Para la conexión a la base de datos debemos hacer lo siguiente, en la carpeta *
 - CSS
 - HTML
 - JavaScript
-
+- PHP
 ## Autores
 
 - [@Crisandru1997](https://www.github.com/Crisandru1997)
