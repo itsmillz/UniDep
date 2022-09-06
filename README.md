@@ -1,4 +1,4 @@
-#UNIDEP
+# UNIDEP
 
 Unidep es un software el cual permite poder buscar arriendos para **estudiantes** en Concepción.
 Este software permite realizar la búsqueda de arriendos cercanos a las universidades especificadas, filtrado por las características deseadas, y por otra parte permite publicar las propiedades de las personas que deseen arrendar.
