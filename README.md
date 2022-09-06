@@ -28,8 +28,7 @@ Esto nos mostrara que tres contenedores, el primero corriendo el [puerto 8000](h
 
 ## Base de datos
 
-Para la conexión a la base de datos debemos hacer lo siguiente, en la carpeta **dump/** se encuenta la base de datos **unidep.sql** la cual debemos importar en el ruta del [puerto 8000](http://localhost:8000)
-
+Para la conexión a la base de datos debemos hacer lo siguiente, en la carpeta **dump/** se encuenta la base de datos **unidep.sql** la cual debemos importar en el ruta del [puerto 8000](http://localhost:8000).
 
 ## Credenciales
 
