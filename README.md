@@ -92,6 +92,7 @@ cd /var/www/html
 ```
 En caso de que la carpeta html/ contenga algún archivo lo eliminaremos:
 ```
+ls
 rm -rf nombre_archivo
 ```
 Una vez aquí realizamos la clonación del proyecto:
@@ -122,9 +123,9 @@ Con esto ya podremos visualizar la pagina en la ip de nuestro servidor, en nuest
 
 #### Configuración de la base de datos en el servidor:
 
-Para realizar la conexión a la base de datos de la FACE en nuestro caso, modificar lo siguiente en nuestro archivo de conexión.
+Lo primero que debemos hacer es importar la base de datos que se encuentra ubicada en la carpeta **dump/**, lo importaremos en nuestro servidor de la universidad http://mysqltrans.face.ubiobio.cl
 
-Primero instalaremos el editor nano, si lo tienes instalado te saltas este paso:
+Una vez importada la base de datos, debemos instalar el editor nano, en caso de que ya lo tengas instalado podras saltarte este paso:
 ````
 sudo apt-get install nano
 ````
@@ -156,35 +157,21 @@ Y aquí tendremos lo siguiente:
     // }
 ?>
 ```
-Lo actualizaremos y dejaremos de este modo:
+Lo actualizaremos ingresando tus credenciales de acceso al servidor de la universidad , debería quedarnos algo así:
 ```PHP
 <?php
-    // Conexión base de datos de la Universidad.
-    // * Se requiere estar conectado al OpenVPN.
-	$conn=mysqli_connect('mysqltrans.face.ubiobio.cl','G51taller','G51taller1058','G51taller_bd');
+	$conn=mysqli_connect('host ','username','password ','dbname');
      date_default_timezone_set('America/Santiago');
      if(mysqli_connect_errno()){
         echo 'Error de conexión:'.mysqli_connect_error();
     }
-
-    // Utilizar conexión local:
-    // $conn=mysqli_connect('db','root','test','unidep');
-    // if(mysqli_connect_errno()){
-    //     echo 'Error de conexión:'.mysqli_connect_error();
-     //}
-
-    // Utilizar otra conexión:
-    // $conn=mysqli_connect('host','username','password','dbname');
-    // if(mysqli_connect_errno()){
-    //     echo 'Error de conexión:'.mysqli_connect_error();
-    // }
 ?>
 ```
-> Con esto dejaremos establecida la conexión de la base de datos de la universidad, en caso de que utilicemos otras credenciales u proveedor completaremos los campos marcados en la línea 18.
+> Con esto dejaremos establecida la conexión de la base de datos de la universidad, en caso de que utilicemos otras credenciales u proveedor completaremos los campos según tus requerimientos.
 
-Una vez que modificamos lo solicitado utilizaremos el comando **CONTROL + S** y **CONTROL + X ** para guardar y salir.
+Una vez que modificamos lo solicitado utilizaremos el comando **Ctrl + O** y **Ctrl + X ** para guardar y salir.
 
-Luego de eso ya estaría corriendo completamente el proyecto en el servidor.
+Luego de eso ya estaría corriendo completamente el proyecto en el servidor, en nuestro caso sería la siguiente: http://146.83.198.35:1059/
 
 ## Credenciales
 
