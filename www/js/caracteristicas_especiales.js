@@ -61,6 +61,7 @@ function checkRut(rut) {
     rut.setCustomValidity('');
 }
 
+// Validación de formulario: Precio Rango
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("form-filtro").addEventListener('submit', validarFormulario); 
 });
@@ -75,15 +76,26 @@ function validarFormulario(evento) {
     let mensajegasto = document.getElementById('mensaje-gasto');
 
     if(desde > hasta) {
+        console.log('Primero');
         mensajeprecio.innerText = 'El precio inicio debe ser mayor al precio final';
       return;
     }
     if(gastoscomunesdesde > gastoscomuneshasta) {
+        console.log('Segundo');
         mensajegasto.innerText = 'El precio inicio debe ser mayor al precio final.';
         return;
       }
     this.submit();
 }
+
+// Borrar inputs
+document.getElementById('limpiar-form').addEventListener('click', function(){
+    if (document.getElementById('gastoscomunesdesde').value != "") {
+        console.log('presionado');
+        document.getElementById('gastoscomunesdesde').value = "";
+        document.getElementById('gastoscomuneshasta').value = "";
+    }
+});
 
 // Validacion de numero
 function seguridadNumero(){

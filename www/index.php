@@ -158,7 +158,7 @@
                                         fill="currentColor"
                                     />
                                 </svg>
-                                <input type="reset" value="">
+                                <input id="limpiar-form" type="reset" value="">
                             </div>
                         </div>
                         <p class="titulo-filtro-individual">Precio</p>
@@ -244,7 +244,7 @@
                                                 fill="currentColor"
                                             />
                                         </svg>
-                                        <input type="reset" value="">
+                                        <input id="limpiar-form" type="reset" value="">
                                     </div>
                                 </div>
                                 <p class="titulo-filtro-individual">Precio</p>
